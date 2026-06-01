@@ -61,6 +61,7 @@ extracted/**/*.jpeg
 *.json
 !manifest.json
 !plugin.json
+!api_specifications/**/*.json
 credentials/
 secrets/
 api_keys.txt

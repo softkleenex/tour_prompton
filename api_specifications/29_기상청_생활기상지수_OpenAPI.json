@@ -1,0 +1,144 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "기상청 생활기상지수 조회 서비스 V4",
+    "description": "자외선지수 및 체감온도 등 보행 약자의 야외 이동 안전에 기여하는 실시간 기상 정보 제공 API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://apis.data.go.kr/1360000/LivingWthrIdxServiceV4"
+    }
+  ],
+  "paths": {
+    "/getUVIdxV4": {
+      "get": {
+        "summary": "자외선지수 조회",
+        "description": "지정된 행정구역코드와 시간에 따른 자외선지수 실시간 데이터를 조회합니다.",
+        "operationId": "getUVIdxV4",
+        "parameters": [
+          {
+            "name": "serviceKey",
+            "in": "query",
+            "required": true,
+            "description": "공공데이터포털에서 발급받은 인증키 (디코딩된 키 권장)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataType",
+            "in": "query",
+            "required": true,
+            "description": "요청 데이터 타입 (JSON 권장)",
+            "schema": {
+              "type": "string",
+              "default": "JSON"
+            }
+          },
+          {
+            "name": "areaNo",
+            "in": "query",
+            "required": true,
+            "description": "행정구역코드 10자리 (예: 서울 종로구 1111000000)",
+            "schema": {
+              "type": "string",
+              "default": "1111000000"
+            }
+          },
+          {
+            "name": "time",
+            "in": "query",
+            "required": true,
+            "description": "발표 년월일시 10자리 (YYYYMMDDHH)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "numOfRows",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "pageNo",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "성공적인 기상 지수 조회 결과 반환",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "response": {
+                      "type": "object",
+                      "properties": {
+                        "header": {
+                          "type": "object",
+                          "properties": {
+                            "resultCode": {
+                              "type": "string"
+                            },
+                            "resultMsg": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "body": {
+                          "type": "object",
+                          "properties": {
+                            "dataType": {
+                              "type": "string"
+                            },
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "item": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "code": {
+                                        "type": "string"
+                                      },
+                                      "areaNo": {
+                                        "type": "string"
+                                      },
+                                      "date": {
+                                        "type": "string"
+                                      },
+                                      "h0": {
+                                        "type": "string",
+                                        "description": "현재 발표 시각의 기상지수값"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
