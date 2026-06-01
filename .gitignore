@@ -72,8 +72,9 @@ read_pdf.py
 download_resources.py
 
 # Downloaded Contest Documents (PDFs & Templates)
-/downloads/
 /contest_materials/
+!/contest_materials/**/*.md
+/downloads/
 *.pdf
 *.pptx
 *.ppt
