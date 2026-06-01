@@ -74,6 +74,7 @@ download_resources.py
 # Downloaded Contest Documents (PDFs & Templates)
 /contest_materials/*
 !/contest_materials/**/*.md
+!/contest_materials/**/*.csv
 !/contest_materials/**/
 /contest_materials/raw/
 /downloads/
