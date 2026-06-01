@@ -1,0 +1,79 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.venv
+venv/
+ENV/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Version control
+.antigravitycli/
+
+# Heavy Assets & Zip files
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+*.mp4
+*.avi
+*.mov
+extracted/**/*.mp4
+extracted/**/*.png
+extracted/**/*.jpg
+extracted/**/*.jpeg
+
+# Credentials & Private Data
+.env
+.env.*
+*.key
+*.pem
+*.json
+!manifest.json
+!plugin.json
+credentials/
+secrets/
+api_keys.txt
+pdf_content.txt
+
+# Temporarily created analysis scripts
+extract.py
+read_pdf.py
+download_resources.py
+
+# Downloaded Contest Documents (PDFs & Templates)
+/downloads/
+/contest_materials/
+*.pdf
+*.pptx
+*.ppt

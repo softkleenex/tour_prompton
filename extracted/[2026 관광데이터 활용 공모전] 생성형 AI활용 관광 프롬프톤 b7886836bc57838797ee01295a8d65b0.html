@@ -1,0 +1,747 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[2026 관광데이터 활용 공모전] 생성형 AI활용 관광 프롬프톤 </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b7886836-bc57-8387-97ee-01295a8d65b0" class="page sans"><header><img class="page-cover-image" src="%5B2026%20%EA%B4%80%EA%B4%91%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%99%9C%EC%9A%A9%20%EA%B3%B5%EB%AA%A8%EC%A0%84%5D%20%EC%83%9D%EC%84%B1%ED%98%95%20AI%ED%99%9C%EC%9A%A9%20%EA%B4%80%EA%B4%91%20%ED%94%84%EB%A1%AC%ED%94%84%ED%86%A4/Event_web_1680x350_091B42_(4).png" style="object-position:center 22.009999999999998%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🏆</span></div><h1 class="page-title" dir="auto">[2026 관광데이터 활용 공모전] 생성형 AI활용 관광 프롬프톤 </h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="b1b86836-bc57-8202-9bdd-8145c2049ab8"><div style="font-size:1.5em"><span class="icon">🌟</span></div><div style="width:100%"><div style="display:contents" dir="auto"><p id="b0c86836-bc57-8290-9359-01f5f5914fe5" class="">환영합니다!</p></div><div style="display:contents" dir="auto"><p id="48586836-bc57-8204-a664-01db427348a6" class=""><strong>[2026 관광데이터 활용 공모전] 생성형 AI 활용 관광 프롬프톤</strong>을 함께하게 되어 반갑습니다.</p></div><div style="display:contents" dir="auto"><p id="15486836-bc57-82d6-ba31-01eb093d7712" class="">이번 프롬프톤은 원티드의 ennoia (엔노이아)를 활용해 관광 산업의 새로운 가능성과 경험을 만들어가는 여정입니다.</p></div><div style="display:contents" dir="auto"><p id="22486836-bc57-8380-9c96-8164c1626620" class="">여러분의 아이디어와 기술, 그리고 관광에 대한 다양한 시선이 만나 <br/>더 많은 사람들에게 새로운 관광 서비스를 제안하게 되길 기대하고 있습니다.</p></div><div style="display:contents" dir="auto"><p id="08686836-bc57-825d-9301-01a8a2a554ff" class="">즐겁게 도전하고, 끝까지 함께 완주해보아요 🚀✨</p></div></div></figure></div><div style="display:contents" dir="auto"><p id="48186836-bc57-8221-9274-810118fb99cb" class="">
+</p></div><div style="display:contents" dir="auto"><hr id="98b86836-bc57-8270-a7cc-81cc62e0914e"/></div><div style="display:contents" dir="auto"><h3 id="0a286836-bc57-8389-b5a0-8151e32669eb" class="block-color-yellow_background">🪄 참가자 퀵 가이드</h3></div><div style="display:contents" dir="auto"><div id="10486836-bc57-82f3-97b6-81ff7a1a09f7" class="column-list"><div style="display:contents" dir="auto"><div id="e4486836-bc57-8310-998d-81e6cc74c783" style="width:100%" class="column"><div style="display:contents" dir="ltr"><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="06d86836-bc57-83bc-9e62-81d1d868326b"><div style="font-size:1.5em"><span class="icon">⚡</span></div><div style="width:100%"><mark class="highlight-yellow_background"><strong>바로 가기 링크 모음</strong></mark><div style="display:contents" dir="auto"><ul id="aab86836-bc57-83d5-82e3-0186892ff23d" class="toggle"><li><details open=""><summary><strong>OT 자료</strong></summary><div style="display:contents" dir="auto"><ul id="9aa86836-bc57-825b-a32d-01a17abf43ba" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue"><strong><a href="https://drive.google.com/file/d/13PbYGgUkc5IThgQwCrCKdor_rq-d4zPL/view?usp=drive_link">프롬프톤 운영 관련 OT 자료</a></strong></mark></li></ul></div><div style="display:contents" dir="auto"><ul id="d0386836-bc57-82e2-bbc8-81d030885aad" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue"><strong><a href="https://drive.google.com/file/d/14-e4G5bQyZrpDC7NrrfAX1jQyKAGObID/view?usp=drive_linkhttps://drive.google.com/file/d/14-e4G5bQyZrpDC7NrrfAX1jQyKAGObID/view?usp=drive_link">엔노이아 사용 관련 OT 자료 </a></strong></mark></li></ul></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1d686836-bc57-83e2-bdf5-81d05b3d6036" class="toggle"><li><details open=""><summary><strong>OT 다시보기 및 OpenAPI 자료</strong></summary><div style="display:contents" dir="auto"><ul id="d9586836-bc57-82b7-849d-014e01c64ae0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue"><strong><a href="https://youtu.be/3PgmlHzTHos">2026 관광 데이터 활용 공모전 - 생성형 AI 활용 관광 프롬프톤 부문 풀영상</a></strong></mark></li></ul></div><div style="display:contents" dir="auto"><ul id="76a86836-bc57-8291-9718-01ebb6541e9d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue"><strong><a href="https://drive.google.com/drive/folders/12TZxwbWzfAZkdW80rU0MhwR4vhZjvSRZ?usp=sharing">2026 관광 데이터 활용 공모전 - OpenAPI 메뉴얼 (외부 공유 금지)</a></strong></mark></li></ul></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="cb786836-bc57-8399-ac2e-8152c4d2bcb0" class="toggle"><li><details open=""><summary><strong>운영 문의사항 ( </strong><mark class="highlight-blue"><strong><a href="https://discord.com/channels/1502272153654005770/1506906899717685339">디스코드</a></strong></mark><mark class="highlight-blue"><strong> </strong></mark><strong>)</strong></summary><div style="display:contents" dir="auto"><ul id="51286836-bc57-8204-b786-812206fbafc1" class="bulleted-list"><li style="list-style-type:disc">공모전 관련 문의사항은 디스코드 <strong>#프롬프톤-운영-문의 채널</strong>을 이용해주세요.</li></ul></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="cac86836-bc57-8361-a3f8-01521ef0df78" class="toggle"><li><details open=""><summary><mark class="highlight-default"><mark class="highlight-default_background"><strong>기술 문의사항</strong></mark></mark><strong> ( </strong><mark class="highlight-blue"><strong><a href="https://discord.com/channels/1502272153654005770/1502274845046607872">디스코드</a></strong></mark><mark class="highlight-blue"><strong> </strong></mark><strong>)</strong></summary><div style="display:contents" dir="auto"><ul id="b2d86836-bc57-83f6-8a01-81d6cef5f049" class="bulleted-list"><li style="list-style-type:disc">엔노이아(ennoia) 관련 문의는 <strong>#프롬프톤-기술-문의 채널</strong>을 이용해주세요.</li></ul></div></details></li></ul></div></div></figure></div></div></div><div style="display:contents" dir="auto"><div id="31986836-bc57-821e-9f29-812440860b5b" style="width:100%" class="column"><div style="display:contents" dir="ltr"><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="c4086836-bc57-8331-b4a6-81ce939b2417"><div style="font-size:1.5em"><span class="icon">🗓️</span></div><div style="width:100%"><mark class="highlight-default"><mark class="highlight-yellow_background"><strong>일정 안내</strong></mark></mark><div style="display:contents" dir="auto"><ul id="93186836-bc57-8374-a784-012668c5e0e1" class="toggle"><li><details open=""><summary><mark class="highlight-orange"><strong>서비스 개발 : 6.10(수) 16:00까지</strong></mark></summary></details></li></ul></div><div style="display:contents" dir="auto"><ul id="40c86836-bc57-8307-99b4-011525cbd451" class="toggle"><li><details open=""><summary><mark class="highlight-orange"><strong>예선 심사 : 6.15(월)~6.16(화)</strong></mark></summary></details></li></ul></div><div style="display:contents" dir="auto"><ul id="80f86836-bc57-82c3-b6d9-01c2b2adb07c" class="toggle"><li><details open=""><summary><mark class="highlight-orange"><strong>예선 심사 결과 발표 및 결선 안내 : 6.18(목)</strong></mark></summary></details></li></ul></div><div style="display:contents" dir="auto"><ul id="93786836-bc57-83e7-8b0e-815e54d51be8" class="toggle"><li><details open=""><summary><mark class="highlight-orange"><strong>결선 심사 및 시상식 : 6.25(목)</strong></mark></summary></details></li></ul></div></div></figure></div><div style="display:contents" dir="auto"><p id="10b86836-bc57-82ef-9f2e-81b98ddc0166" class="">
+</p></div></div></div></div></div><div style="display:contents" dir="auto"><h3 id="28886836-bc57-82b4-b06a-01e6bd90c8cc" class="block-color-brown_background">🪄 프롬프톤 가이드</h3></div><div style="display:contents" dir="auto"><div id="a1b86836-bc57-8391-8bd1-817fe162bb94" class="column-list"><div style="display:contents" dir="auto"><div id="75e86836-bc57-83a0-931a-01b01056bd35" style="width:100%" class="column"><div style="display:contents" dir="ltr"><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="4f686836-bc57-8372-b348-81923014ead8"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><mark class="highlight-brown_background"><strong>아이디어 구체화 가이드 </strong></mark><div style="display:contents" dir="auto"><ul id="20186836-bc57-83ee-b119-819d37feea66" class="block-color-default toggle"><li><details open=""><summary><strong>프롬프톤 아이디어 팁 </strong></summary><div style="display:contents" dir="auto"><ul id="dee86836-bc57-827f-baec-017a363eeafa" class="bulleted-list"><li style="list-style-type:disc">이번 프롬프톤은 단순 아이디어 제안이 아닌,<br/>생성형 AI와 관광데이터를 활용한 <mark class="highlight-orange"><strong>관광 서비스 구현</strong></mark>을 목표로 합니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="e8186836-bc57-83c6-92e8-81aeeb155ee1" class="bulleted-list"><li style="list-style-type:disc">여행 중 겪었던 작은 불편함이나 반복되는 경험도 좋은 서비스의 출발점이 될 수 있습니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="a5d86836-bc57-83e1-8fa3-818874e287b4" class="bulleted-list"><li style="list-style-type:disc">아래 질문들을 따라가다 보면, 생각이 점점 구체적인 서비스 형태로 정리됩니다.</li></ul></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="68a86836-bc57-8217-9924-81afda1433b3" class="toggle"><li><details open=""><summary><strong>아이디어 도출/정리 체크리스트</strong></summary><div style="display:contents" dir="auto"><ul id="45886836-bc57-8210-82bf-8133646f99b5" class="bulleted-list"><li style="list-style-type:disc">“무엇을 만들 것인가”보다, “누구의 어떤 문제를 어떻게 해결할 것인가”가 중요합니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="8b486836-bc57-83fd-bc2d-01f498d7e49c" class="bulleted-list"><li style="list-style-type:disc">생성형 AI와 한국관광공사 OpenAPI를 활용해 어떤 사용자 경험을 만들 수 있을지 고민해보세요.<div style="display:contents" dir="auto"><ul id="92886836-bc57-8336-92ab-0128291dc3c7" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow"><strong>Learning 단계 :  </strong></mark><mark class="highlight-default">문제와 환경 이해하기</mark><div style="display:contents" dir="auto"><ul id="3d886836-bc57-8393-aee5-011ac173d9f5" class="bulleted-list"><li style="list-style-type:square">관광 산업에서 반복적으로 발생하는 불편함은 무엇인가요?</li></ul></div><div style="display:contents" dir="auto"><ul id="e4686836-bc57-8228-a74a-01e5847709e1" class="bulleted-list"><li style="list-style-type:square">여행자·관광객·현장 운영자 입장에서 아쉬웠던 경험이 있었나요?</li></ul></div><div style="display:contents" dir="auto"><ul id="ffe86836-bc57-82a7-b567-01e29a8dc4fe" class="bulleted-list"><li style="list-style-type:square">생성형 AI는 이 문제를 어떻게 도울 수 있을까요?</li></ul></div><div style="display:contents" dir="auto"><ul id="0d286836-bc57-8306-b207-8168ac8a1395" class="bulleted-list"><li style="list-style-type:square">한국관광공사 OpenAPI를 어떤 방식으로 활용할 수 있을까요?</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="b8b86836-bc57-828f-a210-812eb79a22bb" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow"><strong>Discover 단계 : </strong></mark>아이디어 출발점 찾기<div style="display:contents" dir="auto"><ul id="c2486836-bc57-83ca-a261-81bd7ca6e7c1" class="bulleted-list"><li style="list-style-type:square">이 아이디어는 어떤 경험이나 상황에서 시작되었나요?</li></ul></div><div style="display:contents" dir="auto"><ul id="d5a86836-bc57-83db-824c-8134d6497a18" class="bulleted-list"><li style="list-style-type:square">가장 큰 불편을 겪는 사용자는 누구인가요?</li></ul></div><div style="display:contents" dir="auto"><ul id="4f286836-bc57-8396-a044-8156a250b77e" class="bulleted-list"><li style="list-style-type:square">반복적으로 발생하는 문제인가요?</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="dac86836-bc57-83e3-b083-814cfaf89b53" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow"><strong>Analyze 단계 : </strong></mark>문제 정의하기<div style="display:contents" dir="auto"><ul id="83c86836-bc57-8379-a04e-811e5bba0683" class="bulleted-list"><li style="list-style-type:square">현재 방식은 왜 불편한가요?</li></ul></div><div style="display:contents" dir="auto"><ul id="1b186836-bc57-8257-ac1c-8148048cc84e" class="bulleted-list"><li style="list-style-type:square">단순 정보 부족의 문제인가요, 아니면 과정 자체가 복잡한가요?</li></ul></div><div style="display:contents" dir="auto"><ul id="7c686836-bc57-8338-a1e3-016db3c8feb9" class="bulleted-list"><li style="list-style-type:square">사용자가 실제로 원하는 결과는 무엇인가요?</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="78386836-bc57-835e-a1c6-016689ec458e" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow"><strong>Agent Thinking 단계 :</strong></mark> 서비스 형태 구체화하기<div style="display:contents" dir="auto"><ul id="bfa86836-bc57-8318-a71a-8164b1968571" class="bulleted-list"><li style="list-style-type:square">사용자는 어떤 흐름으로 서비스를 이용하게 될까요?</li></ul></div><div style="display:contents" dir="auto"><ul id="b0186836-bc57-83f0-abb6-01b1ee67e181" class="bulleted-list"><li style="list-style-type:square">AI는 어디에서 추천·요약·생성·연결 역할을 하게 될까요?</li></ul></div><div style="display:contents" dir="auto"><ul id="07e86836-bc57-83e5-b125-01e64ec05563" class="bulleted-list"><li style="list-style-type:square">관광데이터(OpenAPI)와 생성형 AI를 결합하면 어떤 새로운 경험을 만들 수 있을까요?</li></ul></div><div style="display:contents" dir="auto"><ul id="d9a86836-bc57-83cf-9576-816f2278e659" class="bulleted-list"><li style="list-style-type:square">웹·앱 형태로 확장한다면 어떤 기능이 핵심이 될까요?</li></ul></div></li></ul></div></li></ul></div></details></li></ul></div></div></figure></div><div style="display:contents" dir="ltr"><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="ca786836-bc57-82ff-982c-01cf69268e5b"><div style="font-size:1.5em"><span class="icon">🛠</span></div><div style="width:100%"><mark class="highlight-brown_background"><strong>프롬프트 환경 및 활용 모델</strong></mark><div style="display:contents" dir="auto"><p id="21a86836-bc57-831f-aaa5-81878fdf3aac" class=""><strong>🚀 </strong><mark class="highlight-default_background"><strong>프롬프톤 개발 플랫폼 :</strong></mark><mark class="highlight-orange"><mark class="highlight-default_background"><strong> ennoia (엔노이아)</strong></mark></mark></p></div><div style="display:contents" dir="auto"><ul id="b9086836-bc57-838c-bed2-81accf4056b5" class="bulleted-list"><li style="list-style-type:disc">ennoia는 LLM을 기업 내부 데이터 및 시스템과 안전하게 연결해, <br/>AI 에이전트와 앱을 만들고 운영할 수 있도록 지원하는 <strong>AI 플랫폼</strong>입니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="40b86836-bc57-83ee-b2d7-81287da9ce29" class="bulleted-list"><li style="list-style-type:disc">비개발자도 쉽고 빠르게 생성형 AI 서비스와 AI Agent를 기획·개발할 수 있도록 지원합니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="37e86836-bc57-8364-b65d-0147dd662a05" class="bulleted-list"><li style="list-style-type:disc">이번 프롬프톤에서는 ennoia와 한국관광공사 OpenAPI를 활용해 <br/>실제 관광 문제를 해결하는 <strong>관광 서비스를 구현</strong>하게 됩니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="8b586836-bc57-8208-9c50-0192198f4156" class="bulleted-list"><li style="list-style-type:disc">프롬프트 개발, RAG 기반 문서 연결, API 연동, Agent Workflow 구성 및 배포 등 <br/>생성형 AI 서비스 개발 전반을 직접 경험할 수 있습니다.</li></ul></div><div style="display:contents" dir="auto"><p id="3c086836-bc57-824f-adfb-815fbb03d29f" class="">🌐 <strong>프롬프톤 활용 AI 모델</strong></p></div><div style="display:contents" dir="auto"><ul id="b3b86836-bc57-8261-b0f9-810a9b026ee5" class="bulleted-list"><li style="list-style-type:disc">OpenAI, Anthropic, Google, HyperCLOVA X 등 다양한 LLM 기반 활용 가능</li></ul></div><div style="display:contents" dir="auto"><ul id="e2c86836-bc57-8343-b45c-0115e04819ef" class="bulleted-list"><li style="list-style-type:disc">목적과 서비스 특성에 맞는 모델 및 Agent Workflow 구성 가능</li></ul></div></div></figure></div><div style="display:contents" dir="ltr"><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="5bc86836-bc57-829b-9d8c-811a8914f37d"><div style="font-size:1.5em"><span class="icon">✨</span></div><div style="width:100%"><mark class="highlight-brown_background"><strong>ennoia FAQ</strong></mark><div style="display:contents" dir="auto"><ul id="d2b86836-bc57-834d-a4af-01da961af3bc" class="toggle"><li><details open=""><summary><mark class="highlight-default"><strong>ennoia는 ChatGPT처럼 대화하며 사용하면 되나요?</strong></mark></summary><div style="display:contents" dir="auto"><ul id="0f486836-bc57-823b-9232-8182452c8831" class="bulleted-list"><li style="list-style-type:disc">ChatGPT가 질문에 답변하는 범용 대화형 AI에 가깝다면, ennoia는 생성형 AI 서비스를 직접 기획·개발·운영할 수 있도록 지원하는 플랫폼이라는 점이 가장 큰 차이입니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="3d486836-bc57-8384-bf80-018b764518d0" class="bulleted-list"><li style="list-style-type:disc">관광데이터(OpenAPI), 문서(RAG), 외부 서비스(API) 등을 연결해 실제 서비스 형태로 구현할 수 있으며, 사용자 요청에 따라 정보를 검색·추천·정리·연결하는 기능까지 구성할 수 있습니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="a6886836-bc57-8298-8bcb-0197b9918a5a" class="bulleted-list"><li style="list-style-type:disc">이번 프롬프톤에서는 단순 챗봇 제작이 아니라, 생성형 AI와 관광데이터를 활용한 웹·앱 기반 관광 서비스를 구현하는 것을 목표로 합니다.</li></ul></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="43c86836-bc57-83ef-9f6c-01f81f93f568" class="toggle"><li><details open=""><summary><strong>반드시 AI Agent 형태로 구현해야 하나요?</strong></summary><div style="display:contents" dir="auto"><ul id="02f86836-bc57-8360-844f-01c8407ef202" class="bulleted-list"><li style="list-style-type:disc">반드시 복잡한 AI Agent 구조가 필요한 것은 아닙니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="52286836-bc57-8310-bab6-01e8a14e4319" class="bulleted-list"><li style="list-style-type:disc">사용자 요청을 분석하고, 데이터를 연결하고, 결과를 생성하거나 실행하는 흐름까지 고려하면 더욱 확장성 있는 서비스 구현이 가능합니다.</li></ul></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="d2786836-bc57-83d9-8d19-012cf71c3d16" class="toggle"><li><details open=""><summary><mark class="highlight-default"><strong>${가변}(Variable)은 왜 사용하나요?</strong></mark></summary><div style="display:contents" dir="auto"><ul id="d7586836-bc57-83bb-9089-81cefddc957b" class="bulleted-list"><li style="list-style-type:disc">사용자 입력값이나 상황에 따라 달라지는 정보를 유연하게 처리하기 위한 기능입니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="4e186836-bc57-820c-8132-813097fcc21d" class="bulleted-list"><li style="list-style-type:disc">예를 들어 관광지, 지역, 일정, 여행 스타일, 사용자 요청 등의 값을 변수로 설정하면 하나의 프롬프트를 다양한 상황에 맞게 활용할 수 있습니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="abc86836-bc57-8211-b7e7-8123b3eb8a28" class="bulleted-list"><li style="list-style-type:disc">Variable을 활용하면 테스트, API 연동, 서비스 확장 및 반복 실행에도 더욱 효과적으로 대응할 수 있습니다.</li></ul></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="92186836-bc57-82c8-a76c-01a644bf82ce" class="toggle"><li><details open=""><summary><strong>RAG는 언제 활용하면 좋나요?</strong></summary><div style="display:contents" dir="auto"><ul id="bec86836-bc57-8379-b928-81d32e7e4e91" class="bulleted-list"><li style="list-style-type:disc">관광 정보, 지역 가이드, 정책, 매뉴얼 등 특정 문서를 기반으로 보다 정확한 답변이나 기능을 제공하고 싶을 때 활용할 수 있습니다.</li></ul></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="12086836-bc57-82ed-984e-0141ec67773e" class="toggle"><li><details open=""><summary><strong>API 연동은 꼭 필요한가요?</strong></summary><div style="display:contents" dir="auto"><ul id="6aa86836-bc57-8238-b151-01692c4bfb77" class="bulleted-list"><li style="list-style-type:disc">이번 프롬프톤에서는 한국관광공사 OpenAPI 활용이 필수입니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="83e86836-bc57-8396-b608-81eccc06f730" class="bulleted-list"><li style="list-style-type:disc">관광데이터와 생성형 AI를 연결해 실제 사용자 경험으로 구현하는 것이 핵심입니다.</li></ul></div></details></li></ul></div></div></figure></div></div></div><div style="display:contents" dir="auto"><div id="e1f86836-bc57-834f-b99e-01978f8b7e03" style="width:100%" class="column"><div style="display:contents" dir="ltr"><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="e6f86836-bc57-8231-80da-01fafeb5cd19"><div style="font-size:1.5em"><span class="icon">📑</span></div><div style="width:100%"><mark class="highlight-brown_background"><strong>서비스 제출 안내</strong></mark><mark class="highlight-default_background"><strong> </strong></mark><div style="display:contents" dir="auto"><ul id="41d86836-bc57-8372-adc3-013c3a5dce6b" class="toggle"><li><details open=""><summary><strong>제출 가이드</strong></summary><div style="display:contents" dir="auto"><ul id="3a186836-bc57-83b1-a0b0-81405046d914" class="bulleted-list"><li style="list-style-type:disc">제출 방법 : 팀 대표자가 결과물을 취합하여 제출해주세요.</li></ul></div><div style="display:contents" dir="auto"><ul id="34786836-bc57-82c2-8145-81fba16d63b4" class="bulleted-list"><li style="list-style-type:disc"><strong>필수 제출</strong><div style="display:contents" dir="auto"><p id="c8286836-bc57-823a-8f3a-81a73db75034" class="">⚠️ 유의 사항 : 한국관광공사 OpenAPI 활용신청 정보(신청자명, 인증키, API 리스트)를 기반으로<br/><strong>심사대상 필수 조건인 공사 API 활용여부를 확인할 예정</strong>입니다. 따라서 정확한 정보를 입력하여주시기 바랍니다.</p></div><div style="display:contents" dir="auto"><ul id="b5886836-bc57-82d2-b04b-014a8b272689" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange"><strong>엔노이아 Studio 앱 공유 URL</strong></mark></li></ul></div><div style="display:contents" dir="auto"><ul id="b4a86836-bc57-832b-b211-816280fc2fe4" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange"><strong>서비스 소개서(별도 양식 제공)</strong></mark></li></ul></div><div style="display:contents" dir="auto"><ul id="f0086836-bc57-822f-93ff-81d65823af6e" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange"><strong>한국관광공사 OpenAPI 활용 신청자명</strong></mark></li></ul></div><div style="display:contents" dir="auto"><ul id="13d86836-bc57-82d4-a38b-01833a160c44" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange"><strong>한국관광공사 OpenAPI 활용 신청자 서비스 인증키</strong></mark></li></ul></div><div style="display:contents" dir="auto"><ul id="d7286836-bc57-8212-8a00-81c9ac8155a3" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange"><strong>서비스 구현 시 활용한 한국관광공사 OpenAPI 리스트</strong></mark></li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="14d86836-bc57-82a4-9b47-811570d818bd" class="bulleted-list"><li style="list-style-type:disc">선택 제출<div style="display:contents" dir="auto"><ul id="94d86836-bc57-8240-9879-814731df5025" class="bulleted-list"><li style="list-style-type:circle">추가 참고 자료 (기획안, 시연 영상 등)</li></ul></div><div style="display:contents" dir="auto"><ul id="11386836-bc57-8284-b509-01e8257f9699" class="bulleted-list"><li style="list-style-type:circle">서비스 관련 외부 링크</li></ul></div></li></ul></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="2ba86836-bc57-8327-afb7-812eb8e49c5c" class="toggle"><li><details open=""><summary><strong>제출 방법</strong></summary><div style="display:contents" dir="auto"><ul id="62e86836-bc57-8201-9d49-014253b9712f" class="toggle"><li><details open=""><summary><strong>STEP 01) 상세 설명 작성하기</strong></summary><div style="display:contents" dir="auto"><ul id="bad86836-bc57-8330-bc30-012eda39c446" class="bulleted-list"><li style="list-style-type:disc"><strong>서비스 제목은 무엇인가요?</strong><div style="display:contents" dir="auto"><ul id="6ed86836-bc57-8277-8e12-01e2dd53d028" class="bulleted-list"><li style="list-style-type:circle">서비스명, 기능명, 문제 해결 관점 모두 제목으로 입력 가능합니다.<br/>예시) 지역 기반 맛집 추천 프롬프트, 여행 일정 자동 생성 AI 어시스턴트</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="17486836-bc57-831c-8eba-01bf7af2e261" class="bulleted-list"><li style="list-style-type:disc"><strong>서비스 내용을 요약 설명해주세요.</strong><div style="display:contents" dir="auto"><ul id="17486836-bc57-837b-8e69-014c66590baa" class="bulleted-list"><li style="list-style-type:circle">이 서비스가 무엇을 해결하는지, 어떤 결과를 내는지를 간단히 설명해 주세요.</li></ul></div><div style="display:contents" dir="auto"><ul id="11d86836-bc57-8256-9259-01ed7e5eabfc" class="bulleted-list"><li style="list-style-type:circle">세부 기능보다는 전체 개요 중심으로 작성하면 좋습니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="b9d86836-bc57-8278-8bcc-01451153d3a8" class="bulleted-list"><li style="list-style-type:circle">서비스가 나오게 된 로직(Logic) 위주로 설명해주셔도 좋습니다.</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="6b586836-bc57-8372-b747-8177e529c9d8" class="bulleted-list"><li style="list-style-type:disc"><strong>해당 주제를 선정한 이유는 무엇인가요?</strong><div style="display:contents" dir="auto"><ul id="18186836-bc57-831b-b1a1-81fbba7def14" class="bulleted-list"><li style="list-style-type:circle">왜 해당 주제를 선택했는 지에 대해 자유롭게 작성해주세요.</li></ul></div><div style="display:contents" dir="auto"><ul id="5d886836-bc57-82d4-9906-01cad17ba88a" class="bulleted-list"><li style="list-style-type:circle">예) 불편했던 경험, 평소 관심사 등</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="dd286836-bc57-832f-817b-811f912b942a" class="bulleted-list"><li style="list-style-type:disc"><strong>타겟 사용자는 누구인가요?</strong><div style="display:contents" dir="auto"><ul id="41486836-bc57-8279-b236-013e79869784" class="bulleted-list"><li style="list-style-type:circle">이 서비스를 주로 사용하게 될 사용자를 구체적으로 작성해주세요.</li></ul></div><div style="display:contents" dir="auto"><ul id="9cb86836-bc57-82a1-95f9-81ff0dc506fb" class="bulleted-list"><li style="list-style-type:circle">예) 국내여행객, 외국인여행객, 가족여행객, 단체여행객 등</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="64086836-bc57-82e0-a90b-01d3716581d3" class="bulleted-list"><li style="list-style-type:disc"><strong>공모전 수행 중 시행착오와 개선을 위한 시도가 있었나요?</strong><div style="display:contents" dir="auto"><ul id="7b486836-bc57-83c1-b9a4-812540bffcf8" class="bulleted-list"><li style="list-style-type:circle">프롬프트를 수정했던 경험, 원하는 결과가 안 나와서 바꿨던 부분 등을 작성해 주세요.</li></ul></div><div style="display:contents" dir="auto"><ul id="abe86836-bc57-82f0-935c-819099488cf1" class="bulleted-list"><li style="list-style-type:circle">특별히 없었다면 ‘없음’ 이라고 작성해도 괜찮습니다.</li></ul></div></li></ul></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="67686836-bc57-82a4-8f0b-0152bf42537d" class="toggle"><li><details open=""><summary><strong>STEP 02) 서비스 제출하기 ( </strong><mark class="highlight-blue"><strong><a href="https://forms.gle/86Q33mWqMhz5wALL8">제출 링크 바로가기</a></strong></mark><strong> )</strong></summary><div style="display:contents" dir="auto"><ul id="b5086836-bc57-82bc-b5e4-01eb0ebe56ef" class="bulleted-list"><li style="list-style-type:disc"><strong>[필수 제출 ①] 엔노이아 Studio 앱 공유 URL</strong><div style="display:contents" dir="auto"><ul id="0e486836-bc57-8318-9996-010877fe8059" class="bulleted-list"><li style="list-style-type:circle">팀에서 최종 완성한 산출물이 반영된 ennoia Studio 앱 공유 URL을 제출해주세요.</li></ul></div><div style="display:contents" dir="auto"><ul id="79b86836-bc57-824b-9b60-81fe9e0c7e4d" class="bulleted-list"><li style="list-style-type:circle">제출 방법 : ennoia Studio 접속 → 제출할 앱 선택 → 더보기(...) 버튼 클릭 후 공유하기 메뉴 클릭 → 기본 값 또는 설정을 조정하여 공유 링크 생성 버튼 클릭 → 생성된 URL 링크를 복사하여 제출 폼에 입력</li></ul></div><div style="display:contents" dir="auto"><ul id="bd786836-bc57-8376-bc77-01bb8a29db39" class="bulleted-list"><li style="list-style-type:circle">유의사항을 꼭 확인해주세요.<div style="display:contents" dir="auto"><ul id="9c586836-bc57-8346-86f2-01d412b01026" class="bulleted-list"><li style="list-style-type:square">앱은 기본적으로 권한 사용자만 접근 가능하지만 공유 시 로그인 없이 모든 사용자 이용 가능</li></ul></div><div style="display:contents" dir="auto"><ul id="e0386836-bc57-8333-86dc-81b2a3a0ba7a" class="bulleted-list"><li style="list-style-type:square">제출 전 직접 링크를 열어 정상 작동 여부를 확인해 주세요.</li></ul></div><div style="display:contents" dir="auto"><ul id="bef86836-bc57-8398-83a7-8144f62a13dc" class="bulleted-list"><li style="list-style-type:square">링크 접속 시 결과물 확인이 어려운 경우, 심사 대상에서 제외됩니다.</li></ul></div></li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="74486836-bc57-8251-b224-8182a3d5be27" class="bulleted-list"><li style="list-style-type:disc"><strong>[필수 제출 ②] 서비스 소개서 (</strong><mark class="highlight-blue"><strong><a href="https://docs.google.com/presentation/d/1-EF1_4H6CmLcwyLbgMS47tflcQnJxxC3AKguVg5tcxo/edit?usp=sharing">양식 바로가기</a></strong></mark><strong>)</strong><div style="display:contents" dir="auto"><ul id="97686836-bc57-83fd-98ef-01f9a43955ea" class="bulleted-list"><li style="list-style-type:circle">팀의 서비스 소개 자료를 제출해주세요.</li></ul></div><div style="display:contents" dir="auto"><ul id="7f286836-bc57-8374-97c7-81a50d4e9439" class="bulleted-list"><li style="list-style-type:circle">자료는 10장 내외의 분량을 권장합니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="72b86836-bc57-82e0-8b2d-019f9b419b6e" class="bulleted-list"><li style="list-style-type:circle">제출 형식<div style="display:contents" dir="auto"><ul id="72186836-bc57-83ee-b8f0-81ec3b6fee67" class="bulleted-list"><li style="list-style-type:square">PPT, PPTX 또는 PDF 파일 1부</li></ul></div><div style="display:contents" dir="auto"><ul id="59886836-bc57-82a6-901d-81257cfb61d9" class="bulleted-list"><li style="list-style-type:square">파일명 예시 : <strong>팀명_서비스소개서_서비스명</strong></li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="f8886836-bc57-83c9-b022-813d194b8931" class="bulleted-list"><li style="list-style-type:circle">작성 가이드<div style="display:contents" dir="auto"><ul id="20986836-bc57-82a3-8749-01ae0ef345b9" class="bulleted-list"><li style="list-style-type:square">팀 소개, 서비스 결과물 소개(문제 정의, 주요기능, 로직, 기대효과 등), 사용된 API 리스트, 시행착오 및 개선시도 등이 포함되도록 작성해주세요.</li></ul></div><div style="display:contents" dir="auto"><ul id="7b086836-bc57-8204-8b6a-810b62f1dc25" class="bulleted-list"><li style="list-style-type:square">예선 심사 통과 시, 결선 심사에서 본 서비스 소개서를 활용하여 PT 발표를 진행할 예정입니다. (발표시간 10분, 결선 심사 진출 팀 대상 필요 시 자료 추가 수정 요청 가능)</li></ul></div><div style="display:contents" dir="auto"><ul id="b9586836-bc57-8383-9722-013af3cb165b" class="bulleted-list"><li style="list-style-type:square">추후 예선 심사 통과 시, 결선 심사 발표를 대비하여 가급적 핵심 내용 중심으로 구성해주세요.</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="c7986836-bc57-82d5-b025-01b4ad194522" class="bulleted-list"><li style="list-style-type:circle">템플릿 활용 가이드<div style="display:contents" dir="auto"><ul id="54e86836-bc57-83aa-af32-81445e05738e" class="bulleted-list"><li style="list-style-type:square">(양식 바로가기) 링크를 클릭하여 구글 슬라이드 양식을 확인해 주세요.</li></ul></div><div style="display:contents" dir="auto"><ul id="dda86836-bc57-8322-8e0e-01dcc628718c" class="bulleted-list"><li style="list-style-type:square">상단 메뉴의 [파일] → [사본 만들기] → [프레젠테이션 전체]를 클릭하여 본인의 드라이브로 복사한 후 내용을 작성해 주세요.</li></ul></div><div style="display:contents" dir="auto"><ul id="e5f86836-bc57-8260-ad61-01c7f0c6b6cf" class="bulleted-list"><li style="list-style-type:square">작성이 완료되면 [파일] → [다운로드] → PDF 문서 또는 PPT, PPTX로 저장하여 아래에 업로드 해주세요.</li></ul></div></li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="61986836-bc57-8252-92fb-0130ff7b5e58" class="bulleted-list"><li style="list-style-type:disc"><strong>[필수 제출 ③] 한국관광공사 OpenAPI 활용 신청자명</strong><div style="display:contents" dir="auto"><ul id="dfd86836-bc57-830c-8d7e-81b5114617d2" class="bulleted-list"><li style="list-style-type:circle">서비스 구현에 활용한 한국관광공사 OpenAPI 활용 신청자명을 입력해주세요.</li></ul></div><div style="display:contents" dir="auto"><ul id="f6686836-bc57-8277-a29b-01de1161c663" class="bulleted-list"><li style="list-style-type:circle">(엔노이아 API 커넥터에 연동한 한국관광공사 OpenAPI를 공공데이터포털에서 활용 신청한 사용자명 입력)</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="a5286836-bc57-83b9-b7ee-8197dcca5ac5" class="bulleted-list"><li style="list-style-type:disc"><strong>[필수 제출 ④] 한국관광공사 OpenAPI 활용 신청자 서비스 인증키</strong><div style="display:contents" dir="auto"><ul id="2e686836-bc57-826b-9f4b-01c669c83e45" class="bulleted-list"><li style="list-style-type:circle">서비스 구현에 활용한 한국관광공사 OpenAPI 활용 신청자의 API인증키(서비스키)를 입력해주세요.</li></ul></div><div style="display:contents" dir="auto"><ul id="a5886836-bc57-82e4-868c-011194bea1cf" class="bulleted-list"><li style="list-style-type:circle">개인 API인증키는 공공데이터포털 로그인 &gt; 마이페이지 &gt; 개인 API 인증키 &gt; 인코딩키(Encoding), 디코딩키(Decoding) 복사 버튼을 통해 활용한 인증키를 모두 제출해주세요.</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="6ea86836-bc57-83c4-9b28-81d0cce3c284" class="bulleted-list"><li style="list-style-type:disc"><strong>[필수 제출 ⑤] 서비스 구현 시 활용한 한국관광공사 OpenAPI 리스트</strong><div style="display:contents" dir="auto"><ul id="79a86836-bc57-82df-81a2-010865a80e9f" class="bulleted-list"><li style="list-style-type:circle">서비스 구현에 활용한 한국관광공사 OpenAPI를 모두 선택해주세요.</li></ul></div><div style="display:contents" dir="auto"><ul id="6ea86836-bc57-82cc-a75d-816d526ec93c" class="toggle"><li><details open=""><summary>실제 서비스에 활용한 OpenAPI만 선택해주세요.</summary><div style="display:contents" dir="auto"><p id="e3886836-bc57-8256-bae9-014c386085b8" class="">국문 관광정보 서비스<br/>영문 관광정보 서비스<br/>일문 관광정보 서비스<br/>중문 간체 관광정보 서비스<br/>중문 번체 관광정보 서비스<br/>독어 관광정보 서비스<br/>불어 관광정보 서비스<br/>서어 관광정보 서비스<br/>노어 관광정보 서비스<br/>무장애 여행 정보 서비스<br/>관광사진 정보 서비스<br/>고캠핑 정보 조회 서비스<br/>관광지 오디오 가이드 정보 서비스<br/>관광 빅데이터 정보 서비스<br/>두루누비 정보 서비스<br/>관광인 채용 정보 서비스<br/>반려동물 동반여행 서비스<br/>기초지자체 중심관광지 정보 서비스<br/>관광지별 연관관광지 정보 서비스<br/>관광지 집중률 방문자 추이 예측 정보 서비스<br/>의료 관광정보 서비스<br/>웰니스 관광정보 서비스<br/>관광공모전(사진) 수상작 정보 서비스<br/>지역별 관광 다양성 정보 서비스<br/>지역별 관광 수요 강도 정보 서비스<br/>지역별 관광 자원 수요 정보 서비스</p></div></details></li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="fbb86836-bc57-82e6-aad2-016013a98ea3" class="bulleted-list"><li style="list-style-type:disc"><strong>[선택 제출] </strong><div style="display:contents" dir="auto"><ul id="93786836-bc57-822d-999a-013ee9fd25e4" class="bulleted-list"><li style="list-style-type:circle">보다 원활한 심사를 위해 아래 자료를 함께 제출할 수 있습니다.<div style="display:contents" dir="auto"><ul id="14d86836-bc57-832d-99a8-01ceb6ad6a2c" class="bulleted-list"><li style="list-style-type:square">추가 참고 자료 (상세 기획안, 시연 영상 등)</li></ul></div><div style="display:contents" dir="auto"><ul id="8d786836-bc57-8209-9459-0182eae69afe" class="bulleted-list"><li style="list-style-type:square">서비스 관련 외부 링크 (엔노이아 앱 결과물 활용 앱/웹 서비스 URL, Notion, GitHub, Figma 등)</li></ul></div></li></ul></div></li></ul></div></details></li></ul></div></details></li></ul></div></div></figure></div><div style="display:contents" dir="ltr"><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="59386836-bc57-82df-ac69-014937ccb3bb"><div style="font-size:1.5em"><span class="icon">🔍</span></div><div style="width:100%"><mark class="highlight-brown_background"><strong>심사 안내</strong></mark><div style="display:contents" dir="auto"><ul id="7e586836-bc57-8240-a38c-81f989d7d709" class="block-color-default toggle"><li><details open=""><summary><strong>예선심사 및 합격자 발표</strong></summary><div style="display:contents" dir="auto"><ul id="48386836-bc57-836d-b67b-0169bb960bb8" class="bulleted-list"><li style="list-style-type:disc">6.10(수) 16:00까지 제출한 서비스를 대상으로 심사를 수행합니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="53686836-bc57-8316-b822-81286c7f1ebc" class="bulleted-list"><li style="list-style-type:disc">6.18(목) 최종 선발 규모의 1.5배수인 총 15팀을 선정 예정입니다.</li></ul></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="2a086836-bc57-838b-af42-0160a2d73ead" class="toggle"><li><details open=""><summary><strong>결선 심사</strong></summary><div style="display:contents" dir="auto"><ul id="5ca86836-bc57-828b-bbdc-813b1c0ab0be" class="bulleted-list"><li style="list-style-type:disc">결선 심사는 6/25(목) 오프라인으로 진행될 예정입니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="c7386836-bc57-83e7-acfd-819f5c854da6" class="bulleted-list"><li style="list-style-type:disc">심사를 통해 최종 10팀을 선정해 시상식을 진행합니다.</li></ul></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="78786836-bc57-8295-9f9e-01c21f1212c1" class="toggle"><li><details open=""><summary><strong>예선 심사 기준</strong></summary><div style="display:contents" dir="auto"><ul id="d2d86836-bc57-82d7-89e4-81815741b5aa" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>기획력 (30점)</strong></mark><div style="display:contents" dir="auto"><ul id="f4086836-bc57-83a9-9f02-011341ccf2a9" class="bulleted-list"><li style="list-style-type:circle">서비스 기획 의도(문제 발견 및 해결)가 명확하고 실질적인가?</li></ul></div><div style="display:contents" dir="auto"><ul id="f5986836-bc57-8369-8a7e-01ab7cf202cb" class="bulleted-list"><li style="list-style-type:circle"> 기존 서비스와는 차별화된 독창적인 아이디어로 기획하였는가?</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="b3886836-bc57-820c-8ec9-018b3b1fe00b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>실현 가능성 (30점)</strong></mark><div style="display:contents" dir="auto"><ul id="c3386836-bc57-83c5-8264-81fc390124ca" class="bulleted-list"><li style="list-style-type:circle">서비스 구현을 위해 프롬프트를 체계적, 구체적으로 기획하고 작성하였는가?</li></ul></div><div style="display:contents" dir="auto"><ul id="68886836-bc57-83f8-a6d6-81c067bea745" class="bulleted-list"><li style="list-style-type:circle">개발, 테스트, 보완 등의 여러 시도를 통해 서비스의 완성도를 높이고, <br/>안정적으로 운영할 수 있는 구현 수준을 갖추었는가?</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="57486836-bc57-82e1-a9b7-81d68a56472f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>확장성 (25점)</strong></mark><div style="display:contents" dir="auto"><ul id="84186836-bc57-8228-9b13-01dcc108a06c" class="bulleted-list"><li style="list-style-type:circle">서비스 구현을 위해 선정한 아이디어가 다양한 서비스로 고도화, 확장될 가능성이 있는가?</li></ul></div><div style="display:contents" dir="auto"><ul id="1f686836-bc57-838d-9d38-811458fb7b12" class="bulleted-list"><li style="list-style-type:circle">완성 서비스가 다양한 환경에서 실제 확산·운영될 가능성이 있는가?</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="57c86836-bc57-8356-9c50-819c04d38fda" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>데이터 활용 적절성 (15점)</strong></mark><div style="display:contents" dir="auto"><ul id="bb186836-bc57-82d5-9773-01e8bd90334e" class="bulleted-list"><li style="list-style-type:circle">서비스 개발에 한국관광공사 OpenAPI를 필수적으로 활용하였는가?</li></ul></div><div style="display:contents" dir="auto"><ul id="83186836-bc57-826e-8d6d-81e0df98c429" class="bulleted-list"><li style="list-style-type:circle">다양한 데이터를 적절하게 활용하여 서비스를 구현하였는가?</li></ul></div></li></ul></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="a9686836-bc57-8200-b9fa-0174aaa856cd" class="toggle"><li><details open=""><summary><strong>결선 심사 기준</strong></summary><div style="display:contents" dir="auto"><ul id="88086836-bc57-8329-b8d9-81ee66ce793b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>기획력 (35점)</strong></mark><div style="display:contents" dir="auto"><ul id="d7a86836-bc57-821e-a2ad-812c9e1e01f2" class="bulleted-list"><li style="list-style-type:circle">기존 서비스와는 차별화된 독창적인 아이디어로 기획하고 구현하였는가</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="32586836-bc57-83ad-96f3-017ec3aed7b2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>기술력 (20점)</strong></mark><div style="display:contents" dir="auto"><ul id="86986836-bc57-8322-897c-81957fa57c40" class="bulleted-list"><li style="list-style-type:circle">프롬프트를 체계적으로 설계, 작성하고 <br/>이를 통해 다양한 유형의 질의에 대해 안정적인 서비스를 제공하였는가?</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="8af86836-bc57-8293-ae0f-8120a4b1d5a3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>확장성 (35점)</strong></mark><div style="display:contents" dir="auto"><ul id="69686836-bc57-824a-997c-8198b6920417" class="bulleted-list"><li style="list-style-type:circle">서비스 구현을 위해 선정한 아이디어가 다양한 서비스로 고도화, 확장될 가능성이 있는가?</li></ul></div><div style="display:contents" dir="auto"><ul id="4ba86836-bc57-82b9-8f9e-013d38256601" class="bulleted-list"><li style="list-style-type:circle">완성 서비스가 향후 다양한 서비스로 발전·확장될 가능성이 있는가?</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="36986836-bc57-822b-a20f-0103f514f1de" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>발표 전달력 (10점)</strong></mark><div style="display:contents" dir="auto"><ul id="abe86836-bc57-82e3-a23f-01af88a98d8d" class="bulleted-list"><li style="list-style-type:circle">발표 내용의 충실성 및 전달력</li></ul></div></li></ul></div></details></li></ul></div></div></figure></div><div style="display:contents" dir="ltr"><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="4df86836-bc57-829e-98f4-81e03c234708"><div style="font-size:1.5em"><span class="icon">📡</span></div><div style="width:100%"><mark class="highlight-brown_background"><strong>ennoia(엔노이아) 보다 쉽게 이해하기 Tip </strong></mark><div style="display:contents" dir="auto"><p id="fa086836-bc57-83bb-bb51-01d4e11431b5" class=""><strong>🍀 </strong><mark class="highlight-default"><strong>ennoia 도움말 [ </strong></mark><mark class="highlight-blue"><strong><a href="https://ennoia.so/docs/studio/nosearch-getting-started-on/introduction-overview-on">바로가기</a></strong></mark><mark class="highlight-default"><strong> ]</strong></mark><mark class="highlight-orange"><strong><br/>      </strong></mark>ennoia의 도움말 문서에서 단계별 안내를 받아 보세요!</p></div><div style="display:contents" dir="auto"><p id="e7e86836-bc57-821b-b866-813e79db2a41" class=""><mark class="highlight-orange"><strong>📽️ </strong></mark><mark class="highlight-default"><strong>ennoia 소개 영상 </strong></mark></p></div><div style="display:contents" dir="ltr"><figure id="b4e86836-bc57-8392-b348-816b2426a0eb"><div class="source"><a href="%5B2026%20%EA%B4%80%EA%B4%91%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%99%9C%EC%9A%A9%20%EA%B3%B5%EB%AA%A8%EC%A0%84%5D%20%EC%83%9D%EC%84%B1%ED%98%95%20AI%ED%99%9C%EC%9A%A9%20%EA%B4%80%EA%B4%91%20%ED%94%84%EB%A1%AC%ED%94%84%ED%86%A4/%EC%97%94%EB%85%B8%EC%9D%B4%EC%95%84-%EC%88%98%EC%A0%95.mp4">attachment:293868c3-9292-4fac-9fdb-735d17d142c4:엔노이아-수정.mp4</a></div></figure></div></div></figure></div><div style="display:contents" dir="auto"><p id="76486836-bc57-83fe-80df-01067d0f58e0" class="">
+</p></div></div></div></div></div><div style="display:contents" dir="ltr"><figure id="27086836-bc57-83f3-a2ff-81a2376f77ef" class="image"><a href="%5B2026%20%EA%B4%80%EA%B4%91%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%99%9C%EC%9A%A9%20%EA%B3%B5%EB%AA%A8%EC%A0%84%5D%20%EC%83%9D%EC%84%B1%ED%98%95%20AI%ED%99%9C%EC%9A%A9%20%EA%B4%80%EA%B4%91%20%ED%94%84%EB%A1%AC%ED%94%84%ED%86%A4/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94..jpg"><img style="width:672px" src="%5B2026%20%EA%B4%80%EA%B4%91%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%99%9C%EC%9A%A9%20%EA%B3%B5%EB%AA%A8%EC%A0%84%5D%20%EC%83%9D%EC%84%B1%ED%98%95%20AI%ED%99%9C%EC%9A%A9%20%EA%B4%80%EA%B4%91%20%ED%94%84%EB%A1%AC%ED%94%84%ED%86%A4/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94..jpg"/></a></figure></div><div style="display:contents" dir="auto"><p id="8bc86836-bc57-8242-bde4-81ace7f39a4b" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
