@@ -76,6 +76,7 @@ download_resources.py
 /contest_materials/*
 !/contest_materials/**/*.md
 !/contest_materials/**/*.csv
+!/contest_materials/**/*.html
 !/contest_materials/**/
 /contest_materials/raw/
 /downloads/
