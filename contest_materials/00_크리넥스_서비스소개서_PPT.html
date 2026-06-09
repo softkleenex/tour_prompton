@@ -267,64 +267,6 @@
             flex: 1;
         }
 
-        /* Flow diagram CSS */
-        .flow-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            margin: 2rem 0;
-        }
-
-        .flow-node {
-            background: rgba(255, 255, 255, 0.85);
-            border: 2px solid var(--theme-slate-100);
-            border-radius: 14px;
-            padding: 1rem 1.2rem;
-            width: 16%;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .flow-node:hover {
-            border-color: var(--theme-primary);
-            transform: scale(1.05);
-        }
-
-        .flow-node.active-node {
-            border-color: var(--theme-primary);
-            background: var(--theme-primary-soft);
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15);
-        }
-
-        .flow-node.accent-node {
-            border-color: var(--theme-secondary);
-            background: var(--theme-secondary-soft);
-            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.15);
-        }
-
-        .flow-node h4 {
-            font-size: 0.9rem !important;
-            margin: 0 0 0.4rem 0 !important;
-            font-weight: 800 !important;
-        }
-
-        .flow-node p {
-            font-size: 0.7rem !important;
-            margin: 0 !important;
-            color: var(--theme-slate-500);
-            line-height: 1.3;
-        }
-
-        .flow-arrow {
-            color: var(--theme-slate-500);
-            font-weight: 700;
-            font-size: 1.5rem;
-            user-select: none;
-        }
-
         /* Table design */
         .premium-table {
             width: 100%;
@@ -686,41 +628,29 @@
                         </div>
                     </div>
 
-                    <p style="text-align: left; width: 100%; font-size: 0.95rem; margin: 0 0 1rem 0; color: var(--theme-slate-700);">
-                        단일 챗봇의 구조적 한계와 할루시네이션(환각)을 완전히 제거하기 위해, <strong>역할이 철저히 격리된 3개의 전문 에이전트 파이프라인</strong>을 직렬로 연결하여 견고한 오케스트레이션 시스템을 완성했습니다.
-                    </p>
+                    <div class="grid-2" style="grid-template-columns: 1fr 1.2fr; gap: 1.5rem; align-items: stretch;">
+                        <div style="display: flex; flex-direction: column; gap: 0.8rem; justify-content: space-between; text-align: left;">
+                            <p style="font-size: 0.85rem; line-height: 1.4; color: var(--theme-slate-700); margin: 0;">
+                                단일 챗봇의 한계와 환각을 완전히 제어하기 위해, **역할이 격리된 3개의 전문 에이전트 파이프라인**을 직렬 연결하여 견고한 오케스트레이션을 구현했습니다.
+                            </p>
+                            <div class="glass-card highlight" style="padding: 1rem; margin: 0;">
+                                <h3 style="margin-top: 0; font-size: 1.05rem; color: var(--theme-primary-dark);">⚙️ 3대 에이전트 & 노드 역할</h3>
+                                <ul class="custom-list" style="margin: 0.5rem 0 0 0; padding-left: 0; font-size: 0.8rem;">
+                                    <li style="font-size: 0.8rem; margin-bottom: 0.4rem;"><strong>Start 노드:</strong> 전역 변수 및 사용자 여행 요구사항 수립.</li>
+                                    <li style="font-size: 0.8rem; margin-bottom: 0.4rem;"><strong>기상 보안관 (Weather Node):</strong> 기상청 API 실시간 등급 판정.</li>
+                                    <li style="font-size: 0.8rem; margin-bottom: 0.4rem;"><strong>크리넥스 기획관 (Planner Node):</strong> 관광공사 무장애 API 연동 1차 설계.</li>
+                                    <li style="font-size: 0.8rem; margin-bottom: 0.4rem;"><strong>비상 우회관 (Rerouter Node):</strong> 기상 위험 시 실내 코스로 자동 대체.</li>
+                                    <li style="font-size: 0.8rem; margin-bottom: 0;"><strong>User Approval (승인 노드):</strong> 정합성 최종 승인 및 뽀송 일정 출력.</li>
+                                </ul>
+                            </div>
+                            <div class="glass-card accent" style="padding: 0.9rem; margin: 0; font-size: 0.8rem;">
+                                ⚡ <strong>핵심 메커니즘:</strong> 기상 등급이 <span class="highlight-text">EMERGENCY</span>로 판단되는 즉시, 비상 우회관 노드가 개입하여 야외 동선을 냉방 및 휠체어 리프트가 완비된 실내 박물관·미술관으로 자동 스왑(Swap) 조치합니다.
+                            </div>
+                        </div>
 
-                    <div class="flow-container">
-                        <div class="flow-node">
-                            <h4>1. Start 노드</h4>
-                            <p>전역 변수 상태 정의 및 사용자 여행 니즈 파악</p>
+                        <div class="image-frame" style="height: 100%; display: flex; justify-content: center; align-items: center; background: none; box-shadow: none; border: none; padding: 0;">
+                            <img src="reference/orchestration_canvas.png" alt="엔노이아 캔버스 맵 설계도" style="border-radius: 16px; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.08); width: 100%; max-height: 380px; object-fit: contain;">
                         </div>
-                        <div class="flow-arrow">➔</div>
-                        <div class="flow-node active-node">
-                            <h4>2. 기상 보안관</h4>
-                            <p>기상청 API 연동 실시간 등급 판정 (NORMAL/CAUTION/EMERGENCY)</p>
-                        </div>
-                        <div class="flow-arrow">➔</div>
-                        <div class="flow-node active-node">
-                            <h4>3. 크리넥스 기획관</h4>
-                            <p>한국관광공사 무장애 정보 기반 1차 평탄 일정 설계</p>
-                        </div>
-                        <div class="flow-arrow">➔</div>
-                        <div class="flow-node active-node">
-                            <h4>4. 비상 우회관</h4>
-                            <p>기상 위험 판정 시 100% 실내 대피 코스로 자동 치환(Swap)</p>
-                        </div>
-                        <div class="flow-arrow">➔</div>
-                        <div class="flow-node accent-node">
-                            <h4>5. User Approval</h4>
-                            <p>사용자 최종 정합성 검증 확인 후 뽀송 일정 출력</p>
-                        </div>
-                    </div>
-
-                    <div class="glass-card highlight" style="width: 100%; box-sizing: border-box; padding: 1.2rem 1.8rem;">
-                        <p style="margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--theme-slate-700);">
-                            ⚡ <strong>동작 원리 핵심:</strong> 기상 조건에 따른 동적 라우팅 수행. 기상 등급이 <span class="highlight-text">EMERGENCY</span>로 판단되는 즉시, 비상 우회관 노드가 개입하여 야외 이동이 포함된 동선을 휠체어 단차 및 냉방 설비가 검증된 실내 미술관·박물관으로 실시간 강제 치환 및 보정합니다.
-                        </p>
                     </div>
 
                     <div class="slide-footer">
@@ -736,41 +666,48 @@
                     <div class="slide-header">
                         <div>
                             <div class="slide-category">Live APIs Used</div>
-                            <h2 class="slide-title">이종(異種) 실시간 데이터의 유기적 융합 및 매핑</h2>
+                            <h2 class="slide-title">이종(이종) 실시간 데이터의 유기적 융합 및 매핑</h2>
                         </div>
                     </div>
 
-                    <div class="grid-2">
-                        <div class="glass-card highlight">
-                            <h3 style="margin-top: 0; font-size: 1.2rem;">🔌 연동 OpenAPI 명세</h3>
-                            <ul class="custom-list">
-                                <li>
+                    <div class="grid-2" style="grid-template-columns: 1.1fr 1fr; gap: 1.5rem; align-items: stretch;">
+                        <div class="glass-card highlight" style="padding: 1.2rem; margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
+                            <h3 style="margin-top: 0; font-size: 1.15rem;">🔌 연동 OpenAPI 명세</h3>
+                            <ul class="custom-list" style="margin: 0.5rem 0 0 0; padding-left: 0;">
+                                <li style="font-size: 0.8rem; margin-bottom: 0.4rem;">
                                     <strong>한국관광공사 국문 관광정보 서비스</strong><br>
-                                    <span style="font-size: 0.8rem; color: var(--theme-slate-500);">전국 단위 관광 명소 및 배리어프리 식당 원천 정보 조회</span>
+                                    <span style="font-size: 0.72rem; color: var(--theme-slate-500);">전국 단위 명소 및 배리어프리 식당 원천 정보 조회</span>
                                 </li>
-                                <li>
+                                <li style="font-size: 0.8rem; margin-bottom: 0.4rem;">
                                     <strong>한국관광공사 무장애 여행 정보 API</strong><br>
-                                    <span style="font-size: 0.8rem; color: var(--theme-slate-500);">경사로 여부, 문턱 높이, 화장실 규격, 휠체어 대여 정보 실시간 파싱</span>
+                                    <span style="font-size: 0.72rem; color: var(--theme-slate-500);">경사로 여부, 문턱 높이, 휠체어 대여소 등 실시간 파싱</span>
                                 </li>
-                                <li>
+                                <li style="font-size: 0.8rem; margin-bottom: 0.4rem;">
                                     <strong>한국관광공사 관광 사진 정보 API</strong><br>
-                                    <span style="font-size: 0.8rem; color: var(--theme-slate-500);">대화형 창 내 대표적인 경관 이미지를 동적으로 렌더링하기 위한 데이터 연동</span>
+                                    <span style="font-size: 0.72rem; color: var(--theme-slate-500);">대화창에 경관 이미지를 동적으로 렌더링하기 위한 데이터 연동</span>
                                 </li>
-                                <li>
+                                <li style="font-size: 0.8rem; margin-bottom: 0;">
                                     <strong>기상청 생활기상지수 조회 서비스 V4</strong><br>
-                                    <span style="font-size: 0.8rem; color: var(--theme-slate-500);">실시간 자외선지수(getUVIdxV4) 및 체감온도지수(getSenTaIdxV4) 호출</span>
+                                    <span style="font-size: 0.72rem; color: var(--theme-slate-500);">실시간 자외선지수 및 체감온도지수 좌표 기반 실시간 호출</span>
                                 </li>
                             </ul>
                         </div>
 
-                        <div class="glass-card accent" style="height: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
-                            <h3 style="margin-top: 0; font-size: 1.2rem; color: var(--theme-secondary-dark);">⚙️ 기술적 차별성</h3>
-                            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--theme-slate-700); margin-bottom: 1rem;">
-                                불확실한 텍스트 기반 시맨틱 유사도 검색에 의존하지 않고, 각 명소의 <strong>실제 고유 코드(contentID)</strong> 및 기상청 행정구역 코드를 내부 메모리 테이블 상에서 직접 1:1 대조합니다.
-                            </p>
-                            <div style="background: rgba(14, 165, 233, 0.05); padding: 1rem; border-radius: 8px; font-size: 0.85rem; color: var(--theme-slate-700); border: 1px solid rgba(14, 165, 233, 0.1);">
-                                🎯 <strong>정밀 매핑 로직:</strong><br>
-                                서울시 종로구 기상 코드 매핑 ➔ 자외선/체감온도 위험도 검증 ➔ 해당 명소 contentID 기준 배리어프리 원격 API 호출 ➔ 지식베이스 매핑 정합성 검증.
+                        <div style="display: flex; flex-direction: column; gap: 0.8rem; justify-content: space-between;">
+                            <div class="glass-card accent" style="padding: 1rem; margin: 0; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                                <h3 style="margin-top: 0; font-size: 1.1rem; color: var(--theme-secondary-dark); margin-bottom: 0.3rem;">⚙️ 기술 정밀 매핑</h3>
+                                <p style="font-size: 0.78rem; line-height: 1.4; color: var(--theme-slate-700); margin: 0;">
+                                    텍스트 유사 매칭 대신, 각 명소의 <strong>고유 코드(contentID)</strong>와 행정구역코드를 내부 테이블 상에서 직접 1:1 대조합니다.
+                                </p>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 0.8rem; flex: 2.2;">
+                                <div class="image-frame" style="padding: 4px; display: flex; align-items: center; justify-content: center; background: white;">
+                                    <img src="reference/api_spec_raw.png" alt="OpenAPI 명세 및 마스킹 화면" style="max-height: 190px; object-fit: contain; border-radius: 6px;">
+                                </div>
+                                <div class="image-frame" style="padding: 4px; display: flex; align-items: center; justify-content: center; background: white;">
+                                    <img src="reference/connector_add.png" alt="커넥터 설정 화면" style="max-height: 190px; object-fit: contain; border-radius: 6px;">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -878,7 +815,7 @@
                                 ❌ <strong>현상:</strong> 에이전트가 50개 이상의 관광지 정보를 가져와 하나하나 API 루프를 돌며 배리어프리 상태를 검증하다가, LangGraph의 노드 재귀 제한 한도인 25회(Recursion limit)를 넘어 시스템이 중단되는 에러 발생.
                             </p>
                             <p style="font-size: 0.85rem; line-height: 1.5; color: var(--theme-slate-700); margin-bottom: 0;">
-                                ✅ <strong>극복:</strong> 프롬프트에 '도구 호출 예산 제약(Throttling)' 규칙을 수립하여 1차 연동 필터링을 통해 무장애 신뢰도가 가장 확실한 핵심 후보군 3~4곳만 엄격히 엄선하여 루프를 돌도록 설계. 에러 원천 차단 및 응답속도 대폭 개선.
+                                ✅ <strong>극복:</strong> 프롬프트에 '도구 호출 예산 제약(Throttling)' 규칙을 수립하여 1차 연동 필터링을 통해 무장애 신뢰도가 가장 확실한 핵심 후보지 3~4곳만 엄격히 엄선하여 루프를 돌도록 설계. 에러 원천 차단 및 응답속도 대폭 개선.
                             </p>
                         </div>
 
@@ -911,36 +848,39 @@
                         </div>
                     </div>
 
-                    <div class="grid-2" style="grid-template-columns: 1.2fr 1fr; gap: 1.5rem;">
-                        <div class="scenario-images">
-                            <div class="scenario-images-row">
-                                <div class="image-frame">
-                                    <img src="reference/normal_scenario_qa.png" alt="일반 날씨 시나리오 대화창">
+                    <div class="grid-2" style="grid-template-columns: 1.3fr 1fr; gap: 1.5rem; align-items: stretch;">
+                        <div class="scenario-images" style="display: flex; flex-direction: column; gap: 0.8rem; justify-content: space-between;">
+                            <div class="scenario-images-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; flex: 1.2;">
+                                <div class="image-frame" style="padding: 4px; display: flex; align-items: center; justify-content: center; background: white;">
+                                    <img src="reference/normal_scenario_qa.png" alt="일반 날씨 시나리오 대화창" style="max-height: 190px; object-fit: contain;">
                                 </div>
-                                <div class="image-frame">
-                                    <img src="reference/bf_safety_criteria_qa.png" alt="무장애 정합성 분석 보고">
+                                <div class="image-frame" style="padding: 4px; display: flex; align-items: center; justify-content: center; background: white;">
+                                    <img src="reference/bf_safety_criteria_qa.png" alt="무장애 정합성 분석 보고" style="max-height: 190px; object-fit: contain;">
                                 </div>
+                            </div>
+                            <div class="image-frame" style="padding: 4px; display: flex; align-items: center; justify-content: center; background: white; flex: 1;">
+                                <img src="reference/user_approval_ui.png" alt="최종 사용자 승인 팝업 구동 화면" style="max-height: 140px; object-fit: contain;">
                             </div>
                         </div>
 
-                        <div class="glass-card highlight" style="display: flex; flex-direction: column; justify-content: center;">
-                            <h3 style="margin-top: 0; font-size: 1.2rem; color: var(--theme-primary-dark);">⚙️ 동적 오케스트레이션 동작 흐름</h3>
+                        <div class="glass-card highlight" style="display: flex; flex-direction: column; justify-content: center; padding: 1.2rem;">
+                            <h3 style="margin-top: 0; font-size: 1.1rem; color: var(--theme-primary-dark); margin-bottom: 0.5rem;">⚙️ 동적 오케스트레이션 동작 흐름</h3>
                             <ul class="custom-list" style="margin-bottom: 0;">
-                                <li>
+                                <li style="font-size: 0.78rem; margin-bottom: 0.4rem;">
                                     <strong>기상청 실시간 API 판정:</strong> 자외선 보통(NORMAL) 및 체감온도 양호 등급 확인.
                                 </li>
-                                <li>
+                                <li style="font-size: 0.78rem; margin-bottom: 0.4rem;">
                                     <strong>배리어프리 기획관 동작:</strong> 평탄 보행로(무단차, 경사로 완비) 중심의 야외 전통 명소 일정 설계.
                                 </li>
-                                <li>
+                                <li style="font-size: 0.78rem; margin-bottom: 0.4rem;">
                                     <strong>비상 우회관 즉시 패스:</strong> 기상 이변이 없으므로 일정을 변경하지 않고 유지.
                                 </li>
-                                <li>
-                                    <strong>최종 뽀송 일정 도출:</strong>
-                                    <span style="font-size: 0.85rem; color: var(--theme-slate-500); display: block; margin-top: 0.3rem;">
+                                <li style="font-size: 0.78rem; margin-bottom: 0;">
+                                    <strong>최종 뽀송 일정 도출 및 승인 대기:</strong>
+                                    <span style="font-size: 0.75rem; color: var(--theme-slate-500); display: block; margin-top: 0.2rem; line-height: 1.4;">
                                         - 경복궁 광화문 경사로 진입 및 근정전 박석 우회 안내<br>
                                         - 인사동 쌈지길 전층 경사로 순환식 관람 동선 매핑<br>
-                                        - 문턱 1.5cm 이하 무장애 공인 숙소 매칭
+                                        - **[최종 정합성 검증]** 사용자의 직접 승인(Approve)을 획득하기 위해 대화창 내 인터랙티브 팝업 대기 노드 활성화
                                     </span>
                                 </li>
                             </ul>
@@ -964,7 +904,7 @@
                         </div>
                     </div>
 
-                    <div class="grid-2" style="grid-template-columns: 1fr 1.2fr; gap: 1.5rem;">
+                    <div class="grid-2" style="grid-template-columns: 1fr 1.2fr; gap: 1.5rem; align-items: stretch;">
                         <div class="glass-card danger" style="display: flex; flex-direction: column; justify-content: center; height: 100%; box-sizing: border-box;">
                             <h3 style="margin-top: 0; font-size: 1.2rem; color: var(--theme-accent);">⚙️ 위험 기상 시 우회 치환 로직</h3>
                             <ul class="custom-list danger-bullets" style="margin-bottom: 0;">
@@ -972,7 +912,7 @@
                                     <strong>기상청 API 실시간 위험 감지:</strong> 자외선 '매우 높음(8 이상)' 또는 체감온도 32°C 초과 시 즉각 <span class="tag danger" style="font-size: 0.7rem;">EMERGENCY</span> 등급 판단.
                                 </li>
                                 <li>
-                                    <strong>비상 우회관의 즉각 개입:</strong> 기획관의 야외 코스(청계천 도보, 조계사 경내 등)를 감지하고 강제 제어권 획득.
+                                    <strong>비상 우회관의 즉각 개입:</strong> 기획관의 야외 코스(청계천 도보 책, 조계사 경내 등)를 감지하고 강제 제어권 획득.
                                 </li>
                                 <li>
                                     <strong>실내 명소 강제 스왑(Swap):</strong> 100% 냉방이 보장되고 휠체어 램프/리프트가 구비된 실내 미술관·박물관 코스로 변환.
