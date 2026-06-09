@@ -637,30 +637,36 @@
                         </div>
                     </div>
                     
-                    <div class="grid-2">
-                        <div class="glass-card danger">
-                            <h3 style="color: var(--theme-accent); margin-top: 0;"><span style="font-size: 1.4rem; margin-right: 0.5rem;">♿</span>물리적 장벽 (Physical Barrier)</h3>
-                            <p style="font-size: 0.95rem; line-height: 1.5; color: var(--theme-slate-700); margin-bottom: 0;">
-                                국내 휠체어/유모차 이용자, 실버 세대 등 <strong>거동 불편 보행 약자는 전체 인구의 약 25%</strong>에 육박합니다. 이들은 목적지 정보의 미비로 여행 중 수많은 단차와 가파른 경사로 앞에서 좌절합니다.
-                            </p>
-                            <div class="pain-point-quote">
-                                "경복궁에 도착하고 나서야 자갈길과 턱 때문에 수동 휠체어 단독 진입이 불가능함을 깨달았습니다."
+                    <div class="grid-2" style="grid-template-columns: 1.2fr 1fr; gap: 1.5rem; align-items: stretch;">
+                        <div style="display: flex; flex-direction: column; gap: 1rem; justify-content: space-between;">
+                            <div class="glass-card danger" style="padding: 1.2rem; margin: 0;">
+                                <h3 style="color: var(--theme-accent); margin-top: 0; font-size: 1.15rem;"><span style="font-size: 1.3rem; margin-right: 0.4rem;">♿</span>물리적 장벽 (Physical Barrier)</h3>
+                                <p style="font-size: 0.85rem; line-height: 1.4; color: var(--theme-slate-700); margin-bottom: 0;">
+                                    거동 불편 보행 약자는 <strong>전체 인구의 약 25%</strong>에 육박합니다. 정보 미비로 현장 단차와 가파른 경사로 앞에서 깊은 절망을 마주합니다.
+                                </p>
+                                <div class="pain-point-quote" style="margin-top: 0.5rem; padding: 0.5rem 0.8rem; font-size: 0.8rem;">
+                                    "경복궁에 도착하고 나서야 자갈길과 턱 때문에 휠체어 단독 진입이 불가능함을 깨달았습니다."
+                                </div>
+                            </div>
+                            
+                            <div class="glass-card danger" style="padding: 1.2rem; margin: 0;">
+                                <h3 style="color: var(--theme-accent); margin-top: 0; font-size: 1.15rem;"><span style="font-size: 1.3rem; margin-right: 0.4rem;">☀️</span>기상 이변 장벽 (Weather Barrier)</h3>
+                                <p style="font-size: 0.85rem; line-height: 1.4; color: var(--theme-slate-700); margin-bottom: 0;">
+                                    기존 큐레이팅 AI는 <strong>보행 약자가 기상 이변(자외선, 폭염)에 훨씬 더 취약하다는 점</strong>을 무시하며, 야외 장시간 노출은 신체적 위험을 유발합니다.
+                                </p>
+                                <div class="pain-point-quote" style="margin-top: 0.5rem; padding: 0.5rem 0.8rem; font-size: 0.8rem;">
+                                    "체감온도 32도가 넘는 폭염 속 청계천 도보길을 걷다가 부모님이 탈진하셨습니다."
+                                </div>
                             </div>
                         </div>
 
-                        <div class="glass-card danger">
-                            <h3 style="color: var(--theme-accent); margin-top: 0;"><span style="font-size: 1.4rem; margin-right: 0.5rem;">☀️</span>기상 이변 장벽 (Weather Barrier)</h3>
-                            <p style="font-size: 0.95rem; line-height: 1.5; color: var(--theme-slate-700); margin-bottom: 0;">
-                                기존 맛집/관광 추천 AI는 <strong>보행 약자가 폭염, 한파, 자외선 등 기상 변수에 훨씬 더 취약하다는 사실</strong>을 완벽히 간과합니다. 야외 동선 노출은 신체적 위험으로 직결됩니다.
-                            </p>
-                            <div class="pain-point-quote">
-                                "체감온도 32도가 넘는 폭염 속에서 그늘 없는 청계천 도보길을 걷다가 부모님이 탈진하셨습니다."
-                            </div>
+                        <div class="image-frame" style="height: 100%; display: flex; justify-content: center; align-items: center; background: none; box-shadow: none; border: none; padding: 0;">
+                            <img src="reference/accessibility_obstacle.png" alt="무장애 극복 3D clay 캐릭터 일러스트" style="border-radius: 16px; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.08); width: 100%; max-height: 380px; object-fit: cover;">
                         </div>
                     </div>
 
-                    <div class="solution-banner">
-                        <p>💡 해결책: 공공데이터와 지능형 에이전트 오케스트레이션을 결합해 물리/기상 장벽을 100% 사전에 차단하는 AI 어시스턴트</p>
+                    <div class="solution-banner" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+                        <p style="font-size: 0.95rem;">💡 해결책: 공공데이터와 지능형 에이전트 오케스트레이션을 결합해 물리/기상 장벽을 100% 사전에 차단하는 AI 어시스턴트</p>
                     </div>
 
                     <div class="slide-footer">
@@ -1006,29 +1012,35 @@
                         </div>
                     </div>
 
-                    <div class="roadmap-container">
-                        <div class="roadmap-card">
-                            <div class="roadmap-step">1</div>
-                            <h3 class="roadmap-title">②-2 웹·앱 구현 연계 계획</h3>
-                            <p style="font-size: 0.85rem; line-height: 1.5; color: var(--theme-slate-700); margin: 0;">
-                                검증 완료된 엔노이아 API 백엔드 로직과 RAG 지식베이스 데이터를 기반으로, <strong>7월 중 네이티브 크로스플랫폼 모바일 앱(iOS/Android) 및 반응형 웹</strong> 서비스 본격 론칭.
-                            </p>
+                    <div class="grid-2" style="grid-template-columns: 1.3fr 1fr; gap: 1.5rem; align-items: stretch;">
+                        <div style="display: flex; flex-direction: column; gap: 0.8rem; justify-content: space-between;">
+                            <div class="roadmap-card" style="padding: 1.1rem 1.1rem 1.1rem 3.5rem; margin: 0;">
+                                <div class="roadmap-step" style="width: 1.8rem; height: 1.8rem; font-size: 0.85rem; left: 1rem; top: 1.1rem;">1</div>
+                                <h3 class="roadmap-title" style="margin: 0 0 0.3rem 0 !important; font-size: 1.05rem !important;">②-2 웹·앱 구현 연계 계획</h3>
+                                <p style="font-size: 0.78rem; line-height: 1.4; color: var(--theme-slate-700); margin: 0;">
+                                    검증 완료된 엔노이아 API 백엔드 로직과 RAG 지식베이스 데이터를 기반으로, <strong>7월 중 네이티브 크로스플랫폼 모바일 앱(iOS/Android) 및 반응형 웹</strong> 서비스 본격 론칭.
+                                </p>
+                            </div>
+
+                            <div class="roadmap-card" style="padding: 1.1rem 1.1rem 1.1rem 3.5rem; margin: 0;">
+                                <div class="roadmap-step" style="width: 1.8rem; height: 1.8rem; font-size: 0.85rem; left: 1rem; top: 1.1rem;">2</div>
+                                <h3 class="roadmap-title" style="margin: 0 0 0.3rem 0 !important; font-size: 1.05rem !important;">BM 및 전국 지자체 협업 스케일업</h3>
+                                <p style="font-size: 0.78rem; line-height: 1.4; color: var(--theme-slate-700); margin: 0;">
+                                    정부 지정 <strong>'무장애 관광 특구'(강릉, 부산 등) 지자체 RTO 협업</strong>을 통해 지역 맞춤형 특화 에이전트 확장. 지자체 매칭 지원금 및 지자체 공식 웹 연계 SaaS 비즈니스 모델 구축.
+                                </p>
+                            </div>
+
+                            <div class="roadmap-card" style="padding: 1.1rem 1.1rem 1.1rem 3.5rem; margin: 0;">
+                                <div class="roadmap-step" style="width: 1.8rem; height: 1.8rem; font-size: 0.85rem; left: 1rem; top: 1.1rem;">3</div>
+                                <h3 class="roadmap-title" style="margin: 0 0 0.3rem 0 !important; font-size: 1.05rem !important;">모빌리티 연계 및 카카오 알림톡 전송</h3>
+                                <p style="font-size: 0.78rem; line-height: 1.4; color: var(--theme-slate-700); margin: 0;">
+                                    TMAP/카카오모빌리티 휠체어 콜택시 API 연동. 최종 뽀송 일정 확정 시, 사용자의 카카오톡으로 상세 무장애 일정 요약 리포트와 고해상도 경관 이미지를 <strong>알림톡 템플릿 카드</strong>로 직접 내보내기(Export) 기능 구현.
+                                </p>
+                            </div>
                         </div>
 
-                        <div class="roadmap-card">
-                            <div class="roadmap-step">2</div>
-                            <h3 class="roadmap-title">BM 및 전국 지자체 협업 스케일업</h3>
-                            <p style="font-size: 0.85rem; line-height: 1.5; color: var(--theme-slate-700); margin: 0;">
-                                정부 지정 <strong>'무장애 관광 특구'(강릉, 부산 등) 지자체 RTO 협업</strong>을 통해 지역 맞춤형 특화 에이전트 확장. 지자체 매칭 지원금 및 지자체 공식 웹 연계 SaaS 비즈니스 모델 구축.
-                            </p>
-                        </div>
-
-                        <div class="roadmap-card">
-                            <div class="roadmap-step">3</div>
-                            <h3 class="roadmap-title">모빌리티 연계 및 카카오 알림톡 전송</h3>
-                            <p style="font-size: 0.85rem; line-height: 1.5; color: var(--theme-slate-700); margin: 0;">
-                                TMAP/카카오모빌리티 휠체어 콜택시 API 연동. 최종 뽀송 일정 확정 시, 사용자의 카카오톡으로 상세 무장애 일정 요약 리포트와 고해상도 경관 이미지를 <strong>알림톡 템플릿 카드</strong>로 직접 내보내기(Export) 기능 구현.
-                            </p>
+                        <div class="image-frame" style="height: 100%; display: flex; justify-content: center; align-items: center; background: none; box-shadow: none; border: none; padding: 0;">
+                            <img src="reference/kakao_export_mockup.png" alt="카카오 알림톡 일정표 카드 전송 3D 목업" style="border-radius: 16px; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.08); width: 100%; max-height: 380px; object-fit: cover;">
                         </div>
                     </div>
 
