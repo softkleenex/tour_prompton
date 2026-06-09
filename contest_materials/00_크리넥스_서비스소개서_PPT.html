@@ -1,0 +1,1095 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>크리넥스 (Kleenex) - 서비스 소개서</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <!-- Reveal.js Theme (White base to custom build) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css" id="theme">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS for Kleenex Soft & Dry Design System -->
+    <style>
+        :root {
+            --theme-primary: #10B981; /* Mint Green */
+            --theme-primary-dark: #059669;
+            --theme-primary-soft: #E6F8F3;
+            --theme-secondary: #0EA5E9; /* Baby Blue */
+            --theme-secondary-dark: #0284C7;
+            --theme-secondary-soft: #E0F2FE;
+            --theme-dark: #0F172A; /* Slate 900 */
+            --theme-slate-700: #334155;
+            --theme-slate-500: #64748B;
+            --theme-slate-100: #F1F5F9;
+            --theme-accent: #F43F5E; /* Rose accent for emergency */
+            
+            --font-sans: 'Noto Sans KR', 'Inter', sans-serif;
+            --font-display: 'Outfit', 'Noto Sans KR', sans-serif;
+        }
+
+        /* Override Reveal.js defaults */
+        .reveal {
+            font-family: var(--font-sans);
+            color: var(--theme-dark);
+            background: linear-gradient(135deg, var(--theme-primary-soft) 0%, var(--theme-secondary-soft) 100%);
+        }
+
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+            font-family: var(--font-display);
+            color: var(--theme-dark);
+            word-break: keep-all;
+            text-transform: none;
+        }
+
+        .reveal h2 {
+            font-weight: 800;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .reveal h3 {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--theme-primary-dark);
+        }
+
+        /* Presentation structures */
+        .slide-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        .slide-header {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid rgba(16, 185, 129, 0.2);
+            padding-bottom: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .slide-category {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--theme-primary-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .slide-title {
+            margin: 0 !important;
+            font-size: 2.2rem !important;
+            font-weight: 800 !important;
+            color: var(--theme-dark) !important;
+            line-height: 1.2 !important;
+        }
+
+        .slide-footer {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 3rem;
+            right: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            color: var(--theme-slate-500);
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 0.5rem;
+        }
+
+        .slide-footer-logo {
+            font-weight: 800;
+            color: var(--theme-primary-dark);
+            letter-spacing: 0.05em;
+        }
+
+        /* Layout grids */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            width: 100%;
+            align-items: start;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        /* Premium UI Elements: Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            padding: 1.8rem;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.08);
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .glass-card.highlight {
+            border-left: 5px solid var(--theme-primary);
+        }
+
+        .glass-card.accent {
+            border-left: 5px solid var(--theme-secondary);
+        }
+
+        .glass-card.danger {
+            border-left: 5px solid var(--theme-accent);
+        }
+
+        /* Typography utility */
+        .txt-left { text-align: left; }
+        .txt-center { text-align: center; }
+        .txt-right { text-align: right; }
+        .font-display { font-family: var(--font-display); }
+        .weight-black { font-weight: 900; }
+        .weight-bold { font-weight: 700; }
+        .weight-medium { font-weight: 500; }
+        
+        .highlight-text {
+            color: var(--theme-primary-dark);
+            font-weight: 700;
+        }
+
+        .accent-text {
+            color: var(--theme-secondary-dark);
+            font-weight: 700;
+        }
+
+        /* List styling */
+        ul.custom-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 1rem 0;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 1.8rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+            font-size: 0.95rem;
+            color: var(--theme-slate-700);
+            text-align: left;
+        }
+
+        ul.custom-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0.1rem;
+            color: var(--theme-primary);
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        ul.custom-list.blue-bullets li::before {
+            content: '✦';
+            color: var(--theme-secondary);
+        }
+
+        ul.custom-list.danger-bullets li::before {
+            content: '⚠';
+            color: var(--theme-accent);
+        }
+
+        /* Image frame styling */
+        .image-frame {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255,255,255,0.8);
+            background: #fff;
+            padding: 6px;
+            transition: all 0.3s ease;
+            max-width: 100%;
+        }
+
+        .image-frame img {
+            border-radius: 8px;
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            margin: 0 !important;
+        }
+
+        /* Scenario side-by-side images */
+        .scenario-images {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .scenario-images-row {
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .scenario-images-row .image-frame {
+            flex: 1;
+        }
+
+        /* Flow diagram CSS */
+        .flow-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin: 2rem 0;
+        }
+
+        .flow-node {
+            background: rgba(255, 255, 255, 0.85);
+            border: 2px solid var(--theme-slate-100);
+            border-radius: 14px;
+            padding: 1rem 1.2rem;
+            width: 16%;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .flow-node:hover {
+            border-color: var(--theme-primary);
+            transform: scale(1.05);
+        }
+
+        .flow-node.active-node {
+            border-color: var(--theme-primary);
+            background: var(--theme-primary-soft);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15);
+        }
+
+        .flow-node.accent-node {
+            border-color: var(--theme-secondary);
+            background: var(--theme-secondary-soft);
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.15);
+        }
+
+        .flow-node h4 {
+            font-size: 0.9rem !important;
+            margin: 0 0 0.4rem 0 !important;
+            font-weight: 800 !important;
+        }
+
+        .flow-node p {
+            font-size: 0.7rem !important;
+            margin: 0 !important;
+            color: var(--theme-slate-500);
+            line-height: 1.3;
+        }
+
+        .flow-arrow {
+            color: var(--theme-slate-500);
+            font-weight: 700;
+            font-size: 1.5rem;
+            user-select: none;
+        }
+
+        /* Table design */
+        .premium-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .premium-table th {
+            background-color: rgba(16, 185, 129, 0.15);
+            color: var(--theme-primary-dark);
+            font-weight: 700;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 2px solid rgba(16, 185, 129, 0.1);
+        }
+
+        .premium-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: var(--theme-slate-700);
+        }
+
+        .premium-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .tag.primary {
+            background: var(--theme-primary-soft);
+            color: var(--theme-primary-dark);
+        }
+
+        .tag.secondary {
+            background: var(--theme-secondary-soft);
+            color: var(--theme-secondary-dark);
+        }
+
+        .tag.danger {
+            background: rgba(244, 63, 94, 0.1);
+            color: var(--theme-accent);
+        }
+
+        /* Title Slide Custom styling */
+        .title-slide-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 3rem;
+            padding: 0 1rem;
+        }
+
+        .title-left {
+            flex: 1;
+            text-align: left;
+        }
+
+        .title-right {
+            width: 320px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-frame {
+            width: 280px;
+            height: 280px;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(16, 185, 129, 0.12);
+            border: 8px solid rgba(255, 255, 255, 0.9);
+            background: white;
+            transform: rotate(-3deg);
+            transition: all 0.5s ease;
+        }
+
+        .logo-frame:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .logo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            margin: 0 !important;
+        }
+
+        .title-slide-tag {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: var(--theme-primary-dark);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .main-title {
+            font-size: 4.8rem !important;
+            font-weight: 900 !important;
+            background: linear-gradient(135deg, var(--theme-dark) 30%, var(--theme-primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 0 1rem 0 !important;
+            letter-spacing: -0.04em !important;
+            line-height: 1.0 !important;
+        }
+
+        .sub-title {
+            font-size: 1.5rem !important;
+            font-weight: 600 !important;
+            color: var(--theme-slate-700) !important;
+            margin-bottom: 2rem !important;
+            line-height: 1.4 !important;
+        }
+
+        .title-desc {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--theme-slate-500);
+            border-left: 3px solid var(--theme-primary);
+            padding-left: 1rem;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.85rem;
+            color: var(--theme-slate-500);
+        }
+
+        .meta-item strong {
+            color: var(--theme-dark);
+        }
+
+        /* Highlight box for Pain Points */
+        .pain-point-quote {
+            background: rgba(244, 63, 94, 0.03);
+            border-left: 4px solid var(--theme-accent);
+            padding: 0.8rem 1rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--theme-slate-700);
+            margin-top: 0.8rem;
+        }
+
+        /* Success criteria or solution banner */
+        .solution-banner {
+            width: 100%;
+            background: linear-gradient(90deg, var(--theme-primary-dark) 0%, var(--theme-secondary-dark) 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 1.2rem 2rem;
+            box-sizing: border-box;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);
+            margin-top: 1.5rem;
+        }
+
+        .solution-banner p {
+            margin: 0 !important;
+            color: white !important;
+            line-height: 1.4;
+        }
+
+        /* Roadmap CSS */
+        .roadmap-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .roadmap-card {
+            background: rgba(255,255,255,0.7);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.6);
+            padding: 1.5rem;
+            position: relative;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            text-align: left;
+        }
+
+        .roadmap-step {
+            position: absolute;
+            top: -1rem;
+            left: 1.5rem;
+            width: 2.2rem;
+            height: 2.2rem;
+            background: var(--theme-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+        }
+
+        .roadmap-card:nth-child(2) .roadmap-step {
+            background: var(--theme-secondary);
+            box-shadow: 0 4px 10px rgba(14, 165, 233, 0.3);
+        }
+
+        .roadmap-card:nth-child(3) .roadmap-step {
+            background: var(--theme-dark);
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.3);
+        }
+
+        .roadmap-title {
+            font-size: 1.15rem !important;
+            font-weight: 700 !important;
+            margin: 1rem 0 0.8rem 0 !important;
+            color: var(--theme-dark) !important;
+        }
+
+        /* Ending Slide */
+        .ending-title {
+            font-size: 3.5rem !important;
+            font-weight: 800 !important;
+            color: var(--theme-dark) !important;
+            margin-bottom: 2rem !important;
+            line-height: 1.2 !important;
+            letter-spacing: -0.03em;
+        }
+        
+        .ending-quote {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--theme-slate-700);
+            max-width: 800px;
+            margin-bottom: 3rem;
+            background: rgba(255,255,255,0.4);
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: inset 0 2px 4px rgba(255,255,255,0.8);
+        }
+
+        /* Printing Styles optimization */
+        @media print {
+            .reveal {
+                background: white !important;
+            }
+            .glass-card {
+                background: white !important;
+                border: 1px solid #CBD5E1 !important;
+                box-shadow: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: 표지 -->
+            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
+                <div class="slide-container">
+                    <div class="title-slide-container">
+                        <div class="title-left">
+                            <span class="title-slide-tag">②-1 생성형 AI 활용 관광 프롬프톤 부문</span>
+                            <h1 class="main-title">크리넥스</h1>
+                            <div class="sub-title">보행 약자를 위한 실시간 무장애(Barrier-Free) AI 여행 동반자</div>
+                            <div class="title-desc">
+                                "불안한 자갈길과 뜨거운 폭염의 눈물을 닦아주고, 세상에서 가장 뽀송뽀송한 여행을 선물합니다."
+                            </div>
+                            <div class="meta-info">
+                                <div class="meta-item">제출팀: <strong>크리넥스 (1인 단독 팀)</strong></div>
+                                <div class="meta-item">제출일자: <strong>2026년 6월 10일</strong></div>
+                            </div>
+                        </div>
+                        <div class="title-right">
+                            <div class="logo-frame">
+                                <img src="reference/kleenex_app_logo.jpeg" alt="크리넥스 3D 클레이 구름 로고">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 2: 문제 정의 및 페인포인트 -->
+            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <div>
+                            <div class="slide-category">Pain Point & Market Needs</div>
+                            <h2 class="slide-title">세상에서 가장 외롭고 불안한 여행자, 보행 약자</h2>
+                        </div>
+                    </div>
+                    
+                    <div class="grid-2">
+                        <div class="glass-card danger">
+                            <h3 style="color: var(--theme-accent); margin-top: 0;"><span style="font-size: 1.4rem; margin-right: 0.5rem;">♿</span>물리적 장벽 (Physical Barrier)</h3>
+                            <p style="font-size: 0.95rem; line-height: 1.5; color: var(--theme-slate-700); margin-bottom: 0;">
+                                국내 휠체어/유모차 이용자, 실버 세대 등 <strong>거동 불편 보행 약자는 전체 인구의 약 25%</strong>에 육박합니다. 이들은 목적지 정보의 미비로 여행 중 수많은 단차와 가파른 경사로 앞에서 좌절합니다.
+                            </p>
+                            <div class="pain-point-quote">
+                                "경복궁에 도착하고 나서야 자갈길과 턱 때문에 수동 휠체어 단독 진입이 불가능함을 깨달았습니다."
+                            </div>
+                        </div>
+
+                        <div class="glass-card danger">
+                            <h3 style="color: var(--theme-accent); margin-top: 0;"><span style="font-size: 1.4rem; margin-right: 0.5rem;">☀️</span>기상 이변 장벽 (Weather Barrier)</h3>
+                            <p style="font-size: 0.95rem; line-height: 1.5; color: var(--theme-slate-700); margin-bottom: 0;">
+                                기존 맛집/관광 추천 AI는 <strong>보행 약자가 폭염, 한파, 자외선 등 기상 변수에 훨씬 더 취약하다는 사실</strong>을 완벽히 간과합니다. 야외 동선 노출은 신체적 위험으로 직결됩니다.
+                            </p>
+                            <div class="pain-point-quote">
+                                "체감온도 32도가 넘는 폭염 속에서 그늘 없는 청계천 도보길을 걷다가 부모님이 탈진하셨습니다."
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="solution-banner">
+                        <p>💡 해결책: 공공데이터와 지능형 에이전트 오케스트레이션을 결합해 물리/기상 장벽을 100% 사전에 차단하는 AI 어시스턴트</p>
+                    </div>
+
+                    <div class="slide-footer">
+                        <span class="slide-footer-logo">Kleenex</span>
+                        <span>Slide 2 / 10</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 3: 서비스 핵심 아키텍처 -->
+            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <div>
+                            <div class="slide-category">System Canvas Architecture</div>
+                            <h2 class="slide-title">LangGraph 기반의 실시간 3단계 오케스트레이션 엔진</h2>
+                        </div>
+                    </div>
+
+                    <p style="text-align: left; width: 100%; font-size: 0.95rem; margin: 0 0 1rem 0; color: var(--theme-slate-700);">
+                        단일 챗봇의 구조적 한계와 할루시네이션(환각)을 완전히 제거하기 위해, <strong>역할이 철저히 격리된 3개의 전문 에이전트 파이프라인</strong>을 직렬로 연결하여 견고한 오케스트레이션 시스템을 완성했습니다.
+                    </p>
+
+                    <div class="flow-container">
+                        <div class="flow-node">
+                            <h4>1. Start 노드</h4>
+                            <p>전역 변수 상태 정의 및 사용자 여행 니즈 파악</p>
+                        </div>
+                        <div class="flow-arrow">➔</div>
+                        <div class="flow-node active-node">
+                            <h4>2. 기상 보안관</h4>
+                            <p>기상청 API 연동 실시간 등급 판정 (NORMAL/CAUTION/EMERGENCY)</p>
+                        </div>
+                        <div class="flow-arrow">➔</div>
+                        <div class="flow-node active-node">
+                            <h4>3. 크리넥스 기획관</h4>
+                            <p>한국관광공사 무장애 정보 기반 1차 평탄 일정 설계</p>
+                        </div>
+                        <div class="flow-arrow">➔</div>
+                        <div class="flow-node active-node">
+                            <h4>4. 비상 우회관</h4>
+                            <p>기상 위험 판정 시 100% 실내 대피 코스로 자동 치환(Swap)</p>
+                        </div>
+                        <div class="flow-arrow">➔</div>
+                        <div class="flow-node accent-node">
+                            <h4>5. User Approval</h4>
+                            <p>사용자 최종 정합성 검증 확인 후 뽀송 일정 출력</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card highlight" style="width: 100%; box-sizing: border-box; padding: 1.2rem 1.8rem;">
+                        <p style="margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--theme-slate-700);">
+                            ⚡ <strong>동작 원리 핵심:</strong> 기상 조건에 따른 동적 라우팅 수행. 기상 등급이 <span class="highlight-text">EMERGENCY</span>로 판단되는 즉시, 비상 우회관 노드가 개입하여 야외 이동이 포함된 동선을 휠체어 단차 및 냉방 설비가 검증된 실내 미술관·박물관으로 실시간 강제 치환 및 보정합니다.
+                        </p>
+                    </div>
+
+                    <div class="slide-footer">
+                        <span class="slide-footer-logo">Kleenex</span>
+                        <span>Slide 3 / 10</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 4: 실시간 공공 OpenAPI 연동 명세 -->
+            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <div>
+                            <div class="slide-category">Live APIs Used</div>
+                            <h2 class="slide-title">이종(異種) 실시간 데이터의 유기적 융합 및 매핑</h2>
+                        </div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="glass-card highlight">
+                            <h3 style="margin-top: 0; font-size: 1.2rem;">🔌 연동 OpenAPI 명세</h3>
+                            <ul class="custom-list">
+                                <li>
+                                    <strong>한국관광공사 국문 관광정보 서비스</strong><br>
+                                    <span style="font-size: 0.8rem; color: var(--theme-slate-500);">전국 단위 관광 명소 및 배리어프리 식당 원천 정보 조회</span>
+                                </li>
+                                <li>
+                                    <strong>한국관광공사 무장애 여행 정보 API</strong><br>
+                                    <span style="font-size: 0.8rem; color: var(--theme-slate-500);">경사로 여부, 문턱 높이, 화장실 규격, 휠체어 대여 정보 실시간 파싱</span>
+                                </li>
+                                <li>
+                                    <strong>한국관광공사 관광 사진 정보 API</strong><br>
+                                    <span style="font-size: 0.8rem; color: var(--theme-slate-500);">대화형 창 내 대표적인 경관 이미지를 동적으로 렌더링하기 위한 데이터 연동</span>
+                                </li>
+                                <li>
+                                    <strong>기상청 생활기상지수 조회 서비스 V4</strong><br>
+                                    <span style="font-size: 0.8rem; color: var(--theme-slate-500);">실시간 자외선지수(getUVIdxV4) 및 체감온도지수(getSenTaIdxV4) 호출</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="glass-card accent" style="height: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
+                            <h3 style="margin-top: 0; font-size: 1.2rem; color: var(--theme-secondary-dark);">⚙️ 기술적 차별성</h3>
+                            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--theme-slate-700); margin-bottom: 1rem;">
+                                불확실한 텍스트 기반 시맨틱 유사도 검색에 의존하지 않고, 각 명소의 <strong>실제 고유 코드(contentID)</strong> 및 기상청 행정구역 코드를 내부 메모리 테이블 상에서 직접 1:1 대조합니다.
+                            </p>
+                            <div style="background: rgba(14, 165, 233, 0.05); padding: 1rem; border-radius: 8px; font-size: 0.85rem; color: var(--theme-slate-700); border: 1px solid rgba(14, 165, 233, 0.1);">
+                                🎯 <strong>정밀 매핑 로직:</strong><br>
+                                서울시 종로구 기상 코드 매핑 ➔ 자외선/체감온도 위험도 검증 ➔ 해당 명소 contentID 기준 배리어프리 원격 API 호출 ➔ 지식베이스 매핑 정합성 검증.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide-footer">
+                        <span class="slide-footer-logo">Kleenex</span>
+                        <span>Slide 4 / 10</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 5: 정형 CSV RAG 지식베이스 설계 -->
+            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <div>
+                            <div class="slide-category">Structured Knowledge Base</div>
+                            <h2 class="slide-title">할루시네이션 Zero! 엔노이아 맞춤형 정형 CSV RAG</h2>
+                        </div>
+                    </div>
+
+                    <div class="grid-2" style="grid-template-columns: 1fr 1.3fr; gap: 1.5rem;">
+                        <div class="glass-card highlight" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%; box-sizing: border-box;">
+                            <div>
+                                <h3 style="margin-top: 0; font-size: 1.2rem;">📂 RAG 설계 극복기 & 확장</h3>
+                                <p style="font-size: 0.85rem; line-height: 1.5; color: var(--theme-slate-700); margin-bottom: 0.6rem;">
+                                    기존 PDF 임베딩 RAG는 텍스트 분절 검색 시 수치적 정밀성을 상실해 심각한 환각 오류를 유발합니다.
+                                </p>
+                                <p style="font-size: 0.85rem; line-height: 1.5; color: var(--theme-slate-700); margin-bottom: 0.6rem;">
+                                    크리넥스는 엔노이아 규격에 최적화된 CSV RAG 설계를 기반으로, <strong>물리 장벽(BF_001~008)</strong>과 <strong>기상 이변(WE_001~006)</strong>을 아우르는 <strong>총 14개 클래스의 정형 지식베이스</strong>를 완벽히 구축했습니다.
+                                </p>
+                                <p style="font-size: 0.85rem; line-height: 1.5; color: var(--theme-slate-700); margin-bottom: 0;">
+                                    이를 통해 단순 지체장애뿐 아니라 시·청각 장애, 임산부, 미세먼지 및 혹한기/우천 비상대피까지 촘촘한 우회 경로 처방이 가능합니다.
+                                </p>
+                            </div>
+                            <div style="background: var(--theme-primary-soft); padding: 0.8rem; border-radius: 8px; font-size: 0.8rem; font-family: monospace; color: var(--theme-primary-dark); display: flex; justify-content: space-between;">
+                                <span>File: knto_barrier_free_kb.csv</span>
+                                <strong>총 14개 데이터셋 완비</strong>
+                            </div>
+                        </div>
+
+                        <div class="glass-card" style="padding: 1.2rem;">
+                            <h3 style="margin-top: 0; font-size: 1.05rem; color: var(--theme-dark); margin-bottom: 0.6rem;">📊 무장애 & 기상 안전성 다각화 기준 (대표 5선)</h3>
+                            <table class="premium-table">
+                                <thead>
+                                    <tr>
+                                        <th>코드</th>
+                                        <th>대상 분류</th>
+                                        <th>필수 하드웨어 / 기상 임계치 기준 및 우회 처방</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="tag primary">BF_001</span></td>
+                                        <td>수동휠체어 단독</td>
+                                        <td>문턱 1.5cm 이하, 경사도 4.7도 이하. 자갈길/박석 회피 동선 설계.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="tag primary">BF_006</span></td>
+                                        <td>시각장애인 배려</td>
+                                        <td>점자 블록 및 음성 유도기 필수. 오디오 가이드 및 문화해설사 연계.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="tag primary">BF_008</span></td>
+                                        <td>임산부 배려</td>
+                                        <td>보행 30분 미만, 무단차 및 모성 보호 공간(수유실 등) 구비지 배치.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="tag danger">WE_003</span></td>
+                                        <td>체감온도 폭염</td>
+                                        <td>체감온도 32°C 이상 시 15분 내 냉방 복합몰(대피소) 휴식 강제 처방.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="tag danger">WE_004</span></td>
+                                        <td>미세먼지 경보</td>
+                                        <td>PM2.5 75 ㎍/㎥ 이상 시 야외 관광 전면 취소, 1급 환기 실내 코스 스왑.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="slide-footer">
+                        <span class="slide-footer-logo">Kleenex</span>
+                        <span>Slide 5 / 10</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 6: 핵심 개발 시 시행착오 및 기술적 극복 -->
+            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <div>
+                            <div class="slide-category">Trials & Triumphs</div>
+                            <h2 class="slide-title">더 견고하고 안정적인 시스템을 향한 엔지니어링 집념</h2>
+                        </div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="glass-card danger">
+                            <div class="tag danger" style="margin-bottom: 0.8rem;">시행착오 A</div>
+                            <h3 style="margin: 0 0 0.8rem 0; font-size: 1.2rem; color: var(--theme-dark);">LangGraph 재귀 제한 초과 에러</h3>
+                            <p style="font-size: 0.85rem; line-height: 1.5; color: var(--theme-slate-500); margin-bottom: 0.8rem;">
+                                ❌ <strong>현상:</strong> 에이전트가 50개 이상의 관광지 정보를 가져와 하나하나 API 루프를 돌며 배리어프리 상태를 검증하다가, LangGraph의 노드 재귀 제한 한도인 25회(Recursion limit)를 넘어 시스템이 중단되는 에러 발생.
+                            </p>
+                            <p style="font-size: 0.85rem; line-height: 1.5; color: var(--theme-slate-700); margin-bottom: 0;">
+                                ✅ <strong>극복:</strong> 프롬프트에 '도구 호출 예산 제약(Throttling)' 규칙을 수립하여 1차 연동 필터링을 통해 무장애 신뢰도가 가장 확실한 핵심 후보군 3~4곳만 엄격히 엄선하여 루프를 돌도록 설계. 에러 원천 차단 및 응답속도 대폭 개선.
+                            </p>
+                        </div>
+
+                        <div class="glass-card danger">
+                            <div class="tag danger" style="margin-bottom: 0.8rem;">시행착오 B</div>
+                            <h3 style="margin: 0 0 0.8rem 0; font-size: 1.2rem; color: var(--theme-dark);">API 커넥터 미세 공백 URL 파싱 에러</h3>
+                            <p style="font-size: 0.85rem; line-height: 1.5; color: var(--theme-slate-500); margin-bottom: 0.8rem;">
+                                ❌ <strong>현상:</strong> 엔노이아 플랫폼 내의 API URL 설정 인풋창에 미세한 공백문자나 눈에 보이지 않는 줄바꿈 기호(\n)가 복사-붙여넣기 과정에서 흘러들어가 API 도구 활성화 자체가 실패하고 500 Internel Error가 발생하는 현상.
+                            </p>
+                            <p style="font-size: 0.85rem; line-height: 1.5; color: var(--theme-slate-700); margin-bottom: 0;">
+                                ✅ <strong>극복:</strong> 플랫폼 내부 커넥터가 아닌 백엔드 실행 노드의 호출 로직 상에서 문자열 뒤쪽 보이지 않는 제어 문자를 제거(Trimming)하고, 수동으로 바인딩 정합성을 검증하는 에러-레질리언스(Resilience) 가드레일 레이어를 프롬프트와 오케스트레이션에 수동 패치함.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="slide-footer">
+                        <span class="slide-footer-logo">Kleenex</span>
+                        <span>Slide 6 / 10</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 7: 실사용 시나리오 A - 날씨가 안전할 때 -->
+            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <div>
+                            <div class="slide-category">NORMAL Scenario</div>
+                            <h2 class="slide-title">경관과 역사 문화를 만끽하는 평탄한 뽀송 일정</h2>
+                        </div>
+                    </div>
+
+                    <div class="grid-2" style="grid-template-columns: 1.2fr 1fr; gap: 1.5rem;">
+                        <div class="scenario-images">
+                            <div class="scenario-images-row">
+                                <div class="image-frame">
+                                    <img src="reference/normal_scenario_qa.png" alt="일반 날씨 시나리오 대화창">
+                                </div>
+                                <div class="image-frame">
+                                    <img src="reference/bf_safety_criteria_qa.png" alt="무장애 정합성 분석 보고">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card highlight" style="display: flex; flex-direction: column; justify-content: center;">
+                            <h3 style="margin-top: 0; font-size: 1.2rem; color: var(--theme-primary-dark);">⚙️ 동적 오케스트레이션 동작 흐름</h3>
+                            <ul class="custom-list" style="margin-bottom: 0;">
+                                <li>
+                                    <strong>기상청 실시간 API 판정:</strong> 자외선 보통(NORMAL) 및 체감온도 양호 등급 확인.
+                                </li>
+                                <li>
+                                    <strong>배리어프리 기획관 동작:</strong> 평탄 보행로(무단차, 경사로 완비) 중심의 야외 전통 명소 일정 설계.
+                                </li>
+                                <li>
+                                    <strong>비상 우회관 즉시 패스:</strong> 기상 이변이 없으므로 일정을 변경하지 않고 유지.
+                                </li>
+                                <li>
+                                    <strong>최종 뽀송 일정 도출:</strong>
+                                    <span style="font-size: 0.85rem; color: var(--theme-slate-500); display: block; margin-top: 0.3rem;">
+                                        - 경복궁 광화문 경사로 진입 및 근정전 박석 우회 안내<br>
+                                        - 인사동 쌈지길 전층 경사로 순환식 관람 동선 매핑<br>
+                                        - 문턱 1.5cm 이하 무장애 공인 숙소 매칭
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="slide-footer">
+                        <span class="slide-footer-logo">Kleenex</span>
+                        <span>Slide 7 / 10</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 8: 실사용 시나리오 B - 날씨가 위험할 때 -->
+            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <div>
+                            <div class="slide-category">EMERGENCY Scenario</div>
+                            <h2 class="slide-title">기상 경보 시 100% 안전한 실내 동선 자동 치환</h2>
+                        </div>
+                    </div>
+
+                    <div class="grid-2" style="grid-template-columns: 1fr 1.2fr; gap: 1.5rem;">
+                        <div class="glass-card danger" style="display: flex; flex-direction: column; justify-content: center; height: 100%; box-sizing: border-box;">
+                            <h3 style="margin-top: 0; font-size: 1.2rem; color: var(--theme-accent);">⚙️ 위험 기상 시 우회 치환 로직</h3>
+                            <ul class="custom-list danger-bullets" style="margin-bottom: 0;">
+                                <li>
+                                    <strong>기상청 API 실시간 위험 감지:</strong> 자외선 '매우 높음(8 이상)' 또는 체감온도 32°C 초과 시 즉각 <span class="tag danger" style="font-size: 0.7rem;">EMERGENCY</span> 등급 판단.
+                                </li>
+                                <li>
+                                    <strong>비상 우회관의 즉각 개입:</strong> 기획관의 야외 코스(청계천 도보, 조계사 경내 등)를 감지하고 강제 제어권 획득.
+                                </li>
+                                <li>
+                                    <strong>실내 명소 강제 스왑(Swap):</strong> 100% 냉방이 보장되고 휠체어 램프/리프트가 구비된 실내 미술관·박물관 코스로 변환.
+                                </li>
+                                <li>
+                                    <strong>최종 뽀송 대피 일정 도출:</strong>
+                                    <span style="font-size: 0.85rem; color: var(--theme-slate-500); display: block; margin-top: 0.3rem;">
+                                        - MMCA 서울 실내 현대미술 특별전 관람<br>
+                                        - 대한민국역사박물관 실내 엘리베이터 동선<br>
+                                        - 서울공예박물관 공예 전시 및 휴게시설 연계
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="scenario-images">
+                            <div class="image-frame">
+                                <img src="reference/weather_caution_qa.png" alt="날씨 이변 시 실내 우회 코스 치환 대화창">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide-footer">
+                        <span class="slide-footer-logo">Kleenex</span>
+                        <span>Slide 8 / 10</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 9: 비즈니스 가치 및 확장성 -->
+            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <div>
+                            <div class="slide-category">Scalability & Business Value</div>
+                            <h2 class="slide-title">프롬프톤을 넘어, 실제 서비스 상용화 단계로의 스케일업</h2>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-container">
+                        <div class="roadmap-card">
+                            <div class="roadmap-step">1</div>
+                            <h3 class="roadmap-title">②-2 웹·앱 구현 연계 계획</h3>
+                            <p style="font-size: 0.85rem; line-height: 1.5; color: var(--theme-slate-700); margin: 0;">
+                                검증 완료된 엔노이아 API 백엔드 로직과 RAG 지식베이스 데이터를 기반으로, <strong>7월 중 네이티브 크로스플랫폼 모바일 앱(iOS/Android) 및 반응형 웹</strong> 서비스 본격 론칭.
+                            </p>
+                        </div>
+
+                        <div class="roadmap-card">
+                            <div class="roadmap-step">2</div>
+                            <h3 class="roadmap-title">BM 및 전국 지자체 협업 스케일업</h3>
+                            <p style="font-size: 0.85rem; line-height: 1.5; color: var(--theme-slate-700); margin: 0;">
+                                정부 지정 <strong>'무장애 관광 특구'(강릉, 부산 등) 지자체 RTO 협업</strong>을 통해 지역 맞춤형 특화 에이전트 확장. 지자체 매칭 지원금 및 지자체 공식 웹 연계 SaaS 비즈니스 모델 구축.
+                            </p>
+                        </div>
+
+                        <div class="roadmap-card">
+                            <div class="roadmap-step">3</div>
+                            <h3 class="roadmap-title">모빌리티 연계 및 카카오 알림톡 전송</h3>
+                            <p style="font-size: 0.85rem; line-height: 1.5; color: var(--theme-slate-700); margin: 0;">
+                                TMAP/카카오모빌리티 휠체어 콜택시 API 연동. 최종 뽀송 일정 확정 시, 사용자의 카카오톡으로 상세 무장애 일정 요약 리포트와 고해상도 경관 이미지를 <strong>알림톡 템플릿 카드</strong>로 직접 내보내기(Export) 기능 구현.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="slide-footer">
+                        <span class="slide-footer-logo">Kleenex</span>
+                        <span>Slide 9 / 10</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 10: 최종 요약 및 포부 -->
+            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
+                <div class="slide-container">
+                    <div class="ending-title">
+                        세상의 모든 보행 장벽을<br>
+                        <span style="color: var(--theme-primary-dark); font-weight: 900;">부드럽게 닦아내는</span> 그날까지
+                    </div>
+                    
+                    <div class="ending-quote">
+                        "보행 약자가 집 문을 나서는 순간부터 집으로 돌아오는 그날까지,<br>
+                        단 1cm의 턱과 단 1도의 경사로 인해 상처받거나 포기하는 일이 없도록<br>
+                        지능형 에이전트 기술로 세상의 장벽을 따뜻하게 닦아내겠습니다."
+                    </div>
+
+                    <p style="font-size: 1.2rem; font-weight: 700; color: var(--theme-slate-700); margin: 0;">
+                        공공 데이터와 최첨단 에이전트 오케스트레이션의 가장 부드러운 결합, <strong>크리넥스 (Kleenex)</strong>
+                    </p>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--theme-primary-dark); font-size: 1.5rem;">경청해 주셔서 감사합니다.</h3>
+
+                    <div class="slide-footer">
+                        <span class="slide-footer-logo">Kleenex</span>
+                        <span>Slide 10 / 10</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js & Plugins JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script>
+        // Initialize Reveal.js with premium configurations
+        Reveal.initialize({
+            hash: true,
+            respondToHashChanges: true,
+            history: true,
+            center: true,
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+            transitionSpeed: 'slow',
+            width: 1100,
+            height: 700,
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 2.0,
+            controls: true,
+            progress: true,
+            slideNumber: false, // Custom slide numbers are styled inside the footers
+            dependencies: []
+        });
+    </script>
+</body>
+</html>
