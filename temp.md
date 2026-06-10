@@ -39,3 +39,22 @@ A minimalist 2D vector app icon of a friendly pastel-colored cloud embracing a g
 ## 💡 웹 제미나이 사용 팁 (Gemini Usage Tips)
 1. **영어 프롬프트**를 사용하시는 것이 고화질 로고 이미지 생성에 훨씬 정밀하고 아름다운 결과물을 보여줍니다.
 2. 원하는 느낌에 가까운 결과물이 나왔을 때, 마우스 우클릭으로 저장하시거나 제미나이의 다운로드 기능을 이용해 PPTX 템플릿(Slide 1 또는 데모 화면 내부)의 로고 위치에 배치하시면 됩니다.
+
+---
+
+## 💡 피그마(Figma) 가져오기 시 이미지 누락 해결 가이드
+로컬 HTML 파일을 `html.to.design` 플러그인으로 피그마에 가져올 때 브라우저 보안 제한으로 인해 이미지가 빈 흰색 상자로 보일 수 있습니다. 피그마에서 해당 빈 상자 영역에 `contest_materials/reference/` 폴더 내의 아래 이미지들을 드래그 앤 드롭하여 채워주세요.
+
+| 슬라이드 번호 | 위치 및 내용 | 매핑할 이미지 파일명 |
+| :--- | :--- | :--- |
+| **슬라이드 1 (표지)** | 오른쪽 로고 프레임 빈 상자 | `kleenex_app_logo.jpeg` |
+| **슬라이드 2 (문제 정의)** | 오른쪽 캐릭터 일러스트 빈 상자 | `accessibility_obstacle.png` |
+| **슬라이드 3 (핵심 아키텍처)** | 오른쪽 오케스트레이션 맵 빈 상자 | `orchestration_canvas.png` |
+| **슬라이드 4 (OpenAPI 명세)** | 오른쪽 아래 첫 번째 빈 상자 | `api_spec_raw.png` |
+| **슬라이드 4 (OpenAPI 명세)** | 오른쪽 아래 두 번째 빈 상자 | `connector_add.png` |
+| **슬라이드 7 (시나리오 A)** | 왼쪽 위 첫 번째 빈 상자 | `normal_scenario_qa.png` |
+| **슬라이드 7 (시나리오 A)** | 왼쪽 위 두 번째 빈 상자 | `bf_safety_criteria_qa.png` |
+| **슬라이드 7 (시나리오 A)** | 아래쪽 가로로 긴 빈 상자 | `user_approval_ui.png` |
+| **슬라이드 8 (시나리오 B)** | 오른쪽 큰 빈 상자 | `weather_caution_qa.png` |
+| **슬라이드 9 (비즈니스 가치)** | 오른쪽 스마트폰 3D 목업 빈 상자 | `kakao_export_mockup.png` |
+
