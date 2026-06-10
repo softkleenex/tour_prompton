@@ -110,6 +110,7 @@
 ```
 /tour_prompton
 ├── README.md                                   # [본 파일] 프로젝트 마스터 개발 가이드 리포트
+├── 대회_공식_가이드_및_제출_규정_통합본.md          # 모집공고, 평가기준, FAQ, 플랫폼 매뉴얼 통합본 (영구 소장용)
 ├── .gitignore                                  # API 키, 로컬 ZIP, 미디어 유출 차단 설정
 ├── .env                                        # 공공데이터포털 개인 마스터 API 키 보존 파일 (로컬 전용)
 ├── /api_specifications                         # 28개 허가완료 OpenAPI & 기상청 JSON 규격서 폴더
@@ -123,13 +124,12 @@
 │   ├── 03_크리넥스_무장애_RAG_가이드북.md        # 무장애 물리/기상 수치 표준 매뉴얼 (RAG용)
 │   ├── 04_크리넥스_멀티에이전트_캔버스_설계서.md     # 캔버스 노드 흐름도 및 에이전트 시스템 프롬프트 통합 설계서
 │   └── 05_크리넥스_최종_앱_배포_설정_및_데모_가이드.md # 배포 명세, 데모 오픈링크 및 외부 API 연동 명세 통합본
-└── /temp                                       # 내부 참조용 참고 문서 백업 및 개발용 임시 스크립트
-    ├── /scripts                                # OCR 및 문서 자동화를 위한 Python/Swift 스크립트
-    │   ├── ocr.swift                           # macOS Vision 엔진 연동 OCR swift 코드
-    │   ├── run_ocr_pipeline.py                 # OCR 이미지 일괄 텍스트 파싱 파이프라인
-    │   ├── generate_api_docs.py                # 28개 OpenAPI 명세서 자동 생성 스크립트
-    │   └── mask_api_keys.py                    # 공개 배포 전 API 키 일괄 마스킹 스크립트
-    └── 대회_공식_가이드_및_제출_규정_통합본.md          # 모집공고, 평가기준, FAQ, 플랫폼 매뉴얼 통합본
+└── /temp                                       # 내부 참조용 참고 문서 백업 및 개발용 임시 스크립트 (삭제 후보군)
+    └── /scripts                                # OCR 및 문서 자동화를 위한 Python/Swift 스크립트
+        ├── ocr.swift                           # macOS Vision 엔진 연동 OCR swift 코드
+        ├── run_ocr_pipeline.py                 # OCR 이미지 일괄 텍스트 파싱 파이프라인
+        ├── generate_api_docs.py                # 28개 OpenAPI 명세서 자동 생성 스크립트
+        └── mask_api_keys.py                    # 공개 배포 전 API 키 일괄 마스킹 스크립트
 ```
 
 ---
