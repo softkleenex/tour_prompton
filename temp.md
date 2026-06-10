@@ -42,19 +42,47 @@ A minimalist 2D vector app icon of a friendly pastel-colored cloud embracing a g
 
 ---
 
-## 💡 피그마(Figma) 가져오기 시 이미지 누락 해결 가이드
-로컬 HTML 파일을 `html.to.design` 플러그인으로 피그마에 가져올 때 브라우저 보안 제한으로 인해 이미지가 빈 흰색 상자로 보일 수 있습니다. 피그마에서 해당 빈 상자 영역에 `contest_materials/reference/` 폴더 내의 아래 이미지들을 드래그 앤 드롭하여 채워주세요.
+## 💡 피그마(Figma) 가져오기 시 이미지 누락 해결 가이드 (옵시디언 뷰어)
+로컬 HTML 파일을 `html.to.design` 플러그인으로 피그마에 가져올 때 브라우저 보안 제한으로 인해 이미지가 빈 흰색 상자로 보일 수 있습니다. 아래 캡처본들을 참조하여 피그마의 빈 상자 영역에 드래그 앤 드롭으로 채워주세요.
 
-| 슬라이드 번호 | 위치 및 내용 | 매핑할 이미지 파일명 |
-| :--- | :--- | :--- |
-| **슬라이드 1 (표지)** | 오른쪽 로고 프레임 빈 상자 | `kleenex_app_logo.jpeg` |
-| **슬라이드 2 (문제 정의)** | 오른쪽 캐릭터 일러스트 빈 상자 | `accessibility_obstacle.png` |
-| **슬라이드 3 (핵심 아키텍처)** | 오른쪽 오케스트레이션 맵 빈 상자 | `orchestration_canvas.png` |
-| **슬라이드 4 (OpenAPI 명세)** | 오른쪽 아래 첫 번째 빈 상자 | `api_spec_raw.png` |
-| **슬라이드 4 (OpenAPI 명세)** | 오른쪽 아래 두 번째 빈 상자 | `connector_add.png` |
-| **슬라이드 7 (시나리오 A)** | 왼쪽 위 첫 번째 빈 상자 | `normal_scenario_qa.png` |
-| **슬라이드 7 (시나리오 A)** | 왼쪽 위 두 번째 빈 상자 | `bf_safety_criteria_qa.png` |
-| **슬라이드 7 (시나리오 A)** | 아래쪽 가로로 긴 빈 상자 | `user_approval_ui.png` |
-| **슬라이드 8 (시나리오 B)** | 오른쪽 큰 빈 상자 | `weather_caution_qa.png` |
-| **슬라이드 9 (비즈니스 가치)** | 오른쪽 스마트폰 3D 목업 빈 상자 | `kakao_export_mockup.png` |
+### 1. 슬라이드 1 (표지) - 오른쪽 로고 프레임
+*   **파일명:** `kleenex_app_logo.jpeg`
+*   ![크리넥스 앱 로고](contest_materials/reference/kleenex_app_logo.jpeg)
+
+### 2. 슬라이드 2 (문제 정의) - 오른쪽 캐릭터 일러스트
+*   **파일명:** `accessibility_obstacle.png`
+*   ![휠체어 극복 3D 캐릭터](contest_materials/reference/accessibility_obstacle.png)
+
+### 3. 슬라이드 3 (핵심 아키텍처) - 오른쪽 오케스트레이션 맵
+*   **파일명:** `orchestration_canvas.png`
+*   ![엔노이아 캔버스 설계도](contest_materials/reference/orchestration_canvas.png)
+
+### 4. 슬라이드 4 (OpenAPI 명세) - 오른쪽 아래 첫 번째 상자
+*   **파일명:** `api_spec_raw.png`
+*   ![공공데이터 명세 캡처](contest_materials/reference/api_spec_raw.png)
+
+### 5. 슬라이드 4 (OpenAPI 명세) - 오른쪽 아래 두 번째 상자
+*   **파일명:** `connector_add.png`
+*   ![엔노이아 API 커넥터 추가 설정 화면](contest_materials/reference/connector_add.png)
+
+### 6. 슬라이드 7 (시나리오 A - 날씨 보통) - 왼쪽 위 첫 번째 상자
+*   **파일명:** `normal_scenario_qa.png`
+*   ![일반 시나리오 챗봇 대화창](contest_materials/reference/normal_scenario_qa.png)
+
+### 7. 슬라이드 7 (시나리오 A - 날씨 보통) - 왼쪽 위 두 번째 상자
+*   **파일명:** `bf_safety_criteria_qa.png`
+*   ![무장애 기준 정합성 검증 대화창](contest_materials/reference/bf_safety_criteria_qa.png)
+
+### 8. 슬라이드 7 (시나리오 A - 날씨 보통) - 아래쪽 가로로 긴 상자
+*   **파일명:** `user_approval_ui.png`
+*   ![사용자 직접 승인 팝업 UI](contest_materials/reference/user_approval_ui.png)
+
+### 9. 슬라이드 8 (시나리오 B - 날씨 경보) - 오른쪽 큰 상자
+*   **파일명:** `weather_caution_qa.png`
+*   ![기상 악화 시 실내 스왑 우회 챗봇 대화창](contest_materials/reference/weather_caution_qa.png)
+
+### 10. 슬라이드 9 (비즈니스 가치) - 오른쪽 스마트폰 3D 목업
+*   **파일명:** `kakao_export_mockup.png`
+*   ![알림톡 전송 완료 3D 캐릭터 목업](contest_materials/reference/kakao_export_mockup.png)
+
 
