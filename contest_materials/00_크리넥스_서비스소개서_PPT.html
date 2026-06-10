@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Reveal.js CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
     <!-- Reveal.js Theme (White base to custom build) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css" id="theme">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,43 +32,89 @@
             --font-display: 'Outfit', 'Noto Sans KR', sans-serif;
         }
 
-        /* Override Reveal.js defaults */
-        .reveal {
+        body {
             font-family: var(--font-sans);
             color: var(--theme-dark);
-            background: linear-gradient(135deg, var(--theme-primary-soft) 0%, var(--theme-secondary-soft) 100%);
+            background-color: #F1F5F9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 0;
+            margin: 0;
         }
 
-        .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+        h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-display);
             color: var(--theme-dark);
             word-break: keep-all;
             text-transform: none;
         }
 
-        .reveal h2 {
+        h2 {
             font-weight: 800;
             font-size: 2.2rem;
             margin-bottom: 1.5rem;
             letter-spacing: -0.03em;
         }
 
-        .reveal h3 {
+        h3 {
             font-weight: 700;
             font-size: 1.5rem;
             color: var(--theme-primary-dark);
         }
 
-        /* Presentation structures */
-        .slide-container {
+        /* Figma-style Frame Label */
+        .slide-outer-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+            page-break-inside: avoid;
+            page-break-after: always;
+        }
+
+        .slide-label {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--theme-slate-500);
+            background: rgba(241, 245, 249, 0.8);
+            padding: 4px 12px;
+            border-radius: 6px;
+            border: 1px solid #E2E8F0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            user-select: none;
+        }
+
+        /* Fixed 1100x700 Slide Frame (Optimized for Figma Import) */
+        .slide-frame {
+            width: 1100px;
+            height: 700px;
+            position: relative;
+            background: linear-gradient(135deg, var(--theme-primary-soft) 0%, var(--theme-secondary-soft) 100%);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.06);
+            overflow: hidden;
+            box-sizing: border-box;
+            
+            /* Merged from slide-container */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100%;
+            padding: 3.5rem;
+        }
+
+        .slides-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1100px);
+            gap: 80px 60px;
+            justify-content: center;
+            padding: 40px;
+            max-width: 2400px;
             width: 100%;
-            padding: 2rem;
-            box-sizing: border-box;
         }
 
         .slide-header {
@@ -527,10 +570,32 @@
             box-shadow: inset 0 2px 4px rgba(255,255,255,0.8);
         }
 
-        /* Printing Styles optimization */
+        /* PDF Printing Override to ensure exact 1100x700 output */
         @media print {
-            .reveal {
-                background: white !important;
+            body {
+                background-color: transparent !important;
+                padding: 0 !important;
+            }
+            .slides-wrapper {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 0 !important;
+                padding: 0 !important;
+                width: 1100px !important;
+            }
+            .slide-outer-container {
+                gap: 0 !important;
+                page-break-inside: avoid !important;
+                page-break-after: always !important;
+            }
+            .slide-label {
+                display: none !important;
+            }
+            .slide-frame {
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+                margin: 0 !important;
             }
             .glass-card {
                 background: white !important;
@@ -541,12 +606,12 @@
     </style>
 </head>
 <body>
-    <div class="reveal">
-        <div class="slides">
+    <div class="slides-wrapper">
 
             <!-- SLIDE 1: 표지 -->
-            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
-                <div class="slide-container">
+        <div class="slide-outer-container">
+            <div class="slide-label">Slide 1: 표지 (Cover)</div>
+            <div class="slide-frame" id="slide-1" data-name="Slide 1: 표지 (Cover)">
                     <div class="title-slide-container">
                         <div class="title-left">
                             <span class="title-slide-tag">②-1 생성형 AI 활용 관광 프롬프톤 부문</span>
@@ -566,12 +631,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+            </div>
+        </div>
 
             <!-- SLIDE 2: 문제 정의 및 페인포인트 -->
-            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
-                <div class="slide-container">
+        <div class="slide-outer-container">
+            <div class="slide-label">Slide 2: 문제 정의 (Pain Point)</div>
+            <div class="slide-frame" id="slide-2" data-name="Slide 2: 문제 정의 (Pain Point)">
                     <div class="slide-header">
                         <div>
                             <div class="slide-category">Pain Point & Market Needs</div>
@@ -615,12 +681,13 @@
                         <span class="slide-footer-logo">Kleenex</span>
                         <span>Slide 2 / 10</span>
                     </div>
-                </div>
-            </section>
+            </div>
+        </div>
 
             <!-- SLIDE 3: 서비스 핵심 아키텍처 -->
-            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
-                <div class="slide-container">
+        <div class="slide-outer-container">
+            <div class="slide-label">Slide 3: 핵심 아키텍처 (Architecture)</div>
+            <div class="slide-frame" id="slide-3" data-name="Slide 3: 핵심 아키텍처 (Architecture)">
                     <div class="slide-header">
                         <div>
                             <div class="slide-category">System Canvas Architecture</div>
@@ -657,12 +724,13 @@
                         <span class="slide-footer-logo">Kleenex</span>
                         <span>Slide 3 / 10</span>
                     </div>
-                </div>
-            </section>
+            </div>
+        </div>
 
             <!-- SLIDE 4: 실시간 공공 OpenAPI 연동 명세 -->
-            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
-                <div class="slide-container">
+        <div class="slide-outer-container">
+            <div class="slide-label">Slide 4: OpenAPI 연동 명세 (API Spec)</div>
+            <div class="slide-frame" id="slide-4" data-name="Slide 4: OpenAPI 연동 명세 (API Spec)">
                     <div class="slide-header">
                         <div>
                             <div class="slide-category">Live APIs Used</div>
@@ -716,12 +784,13 @@
                         <span class="slide-footer-logo">Kleenex</span>
                         <span>Slide 4 / 10</span>
                     </div>
-                </div>
-            </section>
+            </div>
+        </div>
 
             <!-- SLIDE 5: 정형 CSV RAG 지식베이스 설계 -->
-            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
-                <div class="slide-container">
+        <div class="slide-outer-container">
+            <div class="slide-label">Slide 5: RAG 지식베이스 설계 (Knowledge Base)</div>
+            <div class="slide-frame" id="slide-5" data-name="Slide 5: RAG 지식베이스 설계 (Knowledge Base)">
                     <div class="slide-header">
                         <div>
                             <div class="slide-category">Structured Knowledge Base</div>
@@ -794,12 +863,13 @@
                         <span class="slide-footer-logo">Kleenex</span>
                         <span>Slide 5 / 10</span>
                     </div>
-                </div>
-            </section>
+            </div>
+        </div>
 
             <!-- SLIDE 6: 핵심 개발 시 시행착오 및 기술적 극복 -->
-            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
-                <div class="slide-container">
+        <div class="slide-outer-container">
+            <div class="slide-label">Slide 6: 기술적 극복 (Troubleshooting)</div>
+            <div class="slide-frame" id="slide-6" data-name="Slide 6: 기술적 극복 (Troubleshooting)">
                     <div class="slide-header">
                         <div>
                             <div class="slide-category">Trials & Triumphs</div>
@@ -835,12 +905,13 @@
                         <span class="slide-footer-logo">Kleenex</span>
                         <span>Slide 6 / 10</span>
                     </div>
-                </div>
-            </section>
+            </div>
+        </div>
 
             <!-- SLIDE 7: 실사용 시나리오 A - 날씨가 안전할 때 -->
-            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
-                <div class="slide-container">
+        <div class="slide-outer-container">
+            <div class="slide-label">Slide 7: 시나리오 A - 날씨 보통 (Normal Weather)</div>
+            <div class="slide-frame" id="slide-7" data-name="Slide 7: 시나리오 A - 날씨 보통 (Normal Weather)">
                     <div class="slide-header">
                         <div>
                             <div class="slide-category">NORMAL Scenario</div>
@@ -891,12 +962,13 @@
                         <span class="slide-footer-logo">Kleenex</span>
                         <span>Slide 7 / 10</span>
                     </div>
-                </div>
-            </section>
+            </div>
+        </div>
 
             <!-- SLIDE 8: 실사용 시나리오 B - 날씨가 위험할 때 -->
-            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
-                <div class="slide-container">
+        <div class="slide-outer-container">
+            <div class="slide-label">Slide 8: 시나리오 B - 날씨 경보 (Emergency Weather)</div>
+            <div class="slide-frame" id="slide-8" data-name="Slide 8: 시나리오 B - 날씨 경보 (Emergency Weather)">
                     <div class="slide-header">
                         <div>
                             <div class="slide-category">EMERGENCY Scenario</div>
@@ -939,12 +1011,13 @@
                         <span class="slide-footer-logo">Kleenex</span>
                         <span>Slide 8 / 10</span>
                     </div>
-                </div>
-            </section>
+            </div>
+        </div>
 
             <!-- SLIDE 9: 비즈니스 가치 및 확장성 -->
-            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
-                <div class="slide-container">
+        <div class="slide-outer-container">
+            <div class="slide-label">Slide 9: 비즈니스 가치 (Business Value)</div>
+            <div class="slide-frame" id="slide-9" data-name="Slide 9: 비즈니스 가치 (Business Value)">
                     <div class="slide-header">
                         <div>
                             <div class="slide-category">Scalability & Business Value</div>
@@ -988,12 +1061,13 @@
                         <span class="slide-footer-logo">Kleenex</span>
                         <span>Slide 9 / 10</span>
                     </div>
-                </div>
-            </section>
+            </div>
+        </div>
 
             <!-- SLIDE 10: 최종 요약 및 포부 -->
-            <section data-background-gradient="linear-gradient(135deg, #E6F8F3 0%, #E0F2FE 100%)">
-                <div class="slide-container">
+        <div class="slide-outer-container">
+            <div class="slide-label">Slide 10: 최종 요약 및 포부 (Summary)</div>
+            <div class="slide-frame" id="slide-10" data-name="Slide 10: 최종 요약 및 포부 (Summary)">
                     <div class="ending-title">
                         세상의 모든 보행 장벽을<br>
                         <span style="color: var(--theme-primary-dark); font-weight: 900;">부드럽게 닦아내는</span> 그날까지
@@ -1015,33 +1089,11 @@
                         <span class="slide-footer-logo">Kleenex</span>
                         <span>Slide 10 / 10</span>
                     </div>
-                </div>
-            </section>
-
+            </div>
         </div>
+
     </div>
 
-    <!-- Reveal.js & Plugins JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
-    <script>
-        // Initialize Reveal.js with premium configurations
-        Reveal.initialize({
-            hash: true,
-            respondToHashChanges: true,
-            history: true,
-            center: true,
-            transition: 'slide', // none/fade/slide/convex/concave/zoom
-            transitionSpeed: 'slow',
-            width: 1100,
-            height: 700,
-            margin: 0.04,
-            minScale: 0.2,
-            maxScale: 2.0,
-            controls: true,
-            progress: true,
-            slideNumber: false, // Custom slide numbers are styled inside the footers
-            dependencies: []
-        });
-    </script>
+    
 </body>
 </html>
