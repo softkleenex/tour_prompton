@@ -8,22 +8,22 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   
-  <!-- CSS Styling (Premium Accessible Dark Theme) -->
   <style>
     :root {
-      --bg-color: #0b0f19;
-      --card-bg: #151b2c;
-      --card-border: #232c45;
-      --primary: #6366f1; /* Royal Indigo */
-      --primary-glow: rgba(99, 102, 241, 0.15);
-      --success: #10b981; /* Emerald Green */
-      --success-glow: rgba(16, 185, 129, 0.15);
-      --warning: #f59e0b; /* Amber */
-      --danger: #ef4444; /* Rose */
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
+      --theme-primary: #10B981; /* Mint Green */
+      --theme-primary-dark: #059669;
+      --theme-primary-soft: #E6F8F3;
+      --theme-secondary: #0EA5E9; /* Baby Blue */
+      --theme-secondary-dark: #0284C7;
+      --theme-secondary-soft: #E0F2FE;
+      --theme-dark: #0F172A; /* Slate 900 */
+      --theme-slate-700: #334155;
+      --theme-slate-500: #64748B;
+      --theme-slate-100: #F1F5F9;
+      --theme-accent: #F43F5E; /* Rose */
+      
       --font-title: 'Outfit', 'Noto Sans KR', sans-serif;
       --font-body: 'Inter', 'Noto Sans KR', sans-serif;
     }
@@ -35,22 +35,19 @@
     }
 
     body {
-      background-color: var(--bg-color);
-      color: var(--text-main);
+      background: linear-gradient(135deg, var(--theme-primary-soft) 0%, var(--theme-secondary-soft) 100%);
+      background-attachment: fixed;
+      color: var(--theme-dark);
       font-family: var(--font-body);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      padding-bottom: 80px;
+      padding-bottom: 60px;
     }
 
-    /* Header & Hero Section */
+    /* Header */
     header {
-      background: radial-gradient(circle at top right, var(--primary-glow), transparent 60%),
-                  radial-gradient(circle at bottom left, var(--success-glow), transparent 60%),
-                  linear-gradient(180deg, #0e1322 0%, var(--bg-color) 100%);
-      padding: 80px 24px 60px 24px;
+      padding: 60px 24px 40px 24px;
       text-align: center;
-      border-bottom: 1px solid var(--card-border);
       position: relative;
     }
 
@@ -58,15 +55,15 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(99, 102, 241, 0.1);
-      border: 1px solid rgba(99, 102, 241, 0.3);
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
       padding: 6px 14px;
       border-radius: 100px;
       font-family: var(--font-title);
       font-size: 0.85rem;
-      font-weight: 500;
-      color: #818cf8;
-      margin-bottom: 24px;
+      font-weight: 700;
+      color: var(--theme-primary-dark);
+      margin-bottom: 20px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
@@ -75,28 +72,27 @@
       display: inline-block;
       width: 8px;
       height: 8px;
-      background-color: var(--success);
+      background-color: var(--theme-primary);
       border-radius: 50%;
-      box-shadow: 0 0 8px var(--success);
+      box-shadow: 0 0 8px var(--theme-primary);
     }
 
     h1 {
       font-family: var(--font-title);
-      font-size: 3.5rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-      background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 2.8rem;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+      color: var(--theme-dark);
+      line-height: 1.2;
     }
 
     header p {
-      font-size: 1.25rem;
-      color: var(--text-muted);
+      font-size: 1.15rem;
+      color: var(--theme-slate-700);
       max-width: 800px;
       margin: 0 auto 30px auto;
-      font-weight: 300;
+      font-weight: 500;
     }
 
     .meta-grid {
@@ -108,31 +104,34 @@
     }
 
     .meta-card {
-      background: rgba(21, 27, 44, 0.5);
-      border: 1px solid var(--card-border);
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
       padding: 16px;
       border-radius: 12px;
       text-align: left;
+      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.02);
     }
 
     .meta-card label {
       display: block;
       font-size: 0.75rem;
-      color: var(--text-muted);
+      color: var(--theme-slate-500);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
       margin-bottom: 4px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
     }
 
     .meta-card value {
       display: block;
       font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-main);
+      font-weight: 600;
+      color: var(--theme-dark);
     }
 
     .meta-card value a {
-      color: #818cf8;
+      color: var(--theme-secondary-dark);
       text-decoration: none;
       word-break: break-all;
     }
@@ -141,73 +140,76 @@
       text-decoration: underline;
     }
 
-    /* Container & Layout */
+    /* Container */
     .container {
-      max-width: 1100px;
-      margin: 50px auto 0 auto;
+      max-width: 900px;
+      margin: 20px auto 0 auto;
       padding: 0 24px;
     }
 
-    /* Card Section */
     section {
-      background-color: var(--card-bg);
-      border: 1px solid var(--card-border);
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
       border-radius: 16px;
-      padding: 40px;
-      margin-bottom: 40px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      padding: 35px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
     }
 
     h2 {
       font-family: var(--font-title);
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin-bottom: 24px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(16, 185, 129, 0.2);
       display: flex;
       align-items: center;
       gap: 12px;
+      color: var(--theme-dark);
     }
 
     h2::before {
       content: "";
       display: inline-block;
       width: 4px;
-      height: 24px;
-      background: linear-gradient(180deg, var(--primary), var(--success));
+      height: 22px;
+      background: linear-gradient(180deg, var(--theme-primary), var(--theme-secondary));
       border-radius: 4px;
     }
 
     h3 {
       font-family: var(--font-title);
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin: 24px 0 12px 0;
-      color: #a5b4fc;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 20px 0 10px 0;
+      color: var(--theme-primary-dark);
     }
 
     p {
-      color: #d1d5db;
+      color: var(--theme-slate-700);
       margin-bottom: 16px;
-      font-weight: 400;
+      font-size: 0.95rem;
+      text-align: justify;
     }
 
     ul, ol {
       margin-left: 20px;
       margin-bottom: 20px;
-      color: #d1d5db;
+      color: var(--theme-slate-700);
+      font-size: 0.95rem;
     }
 
     li {
       margin-bottom: 8px;
     }
 
-    /* Interactive Timeline UI */
+    /* Timeline */
     .timeline {
       position: relative;
       padding-left: 30px;
-      margin: 30px 0;
+      margin: 25px 0;
     }
 
     .timeline::before {
@@ -217,12 +219,12 @@
       top: 0;
       bottom: 0;
       width: 2px;
-      background-color: var(--card-border);
+      background-color: rgba(16, 185, 129, 0.2);
     }
 
     .timeline-item {
       position: relative;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .timeline-item::before {
@@ -233,330 +235,106 @@
       width: 18px;
       height: 18px;
       border-radius: 50%;
-      background-color: var(--bg-color);
-      border: 4px solid var(--primary);
+      background-color: white;
+      border: 4px solid var(--theme-primary);
       z-index: 2;
     }
 
     .timeline-item.success::before {
-      border-color: var(--success);
+      border-color: var(--theme-primary);
     }
 
     .timeline-item.warning::before {
-      border-color: var(--warning);
+      border-color: var(--theme-accent);
     }
 
     .timeline-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: var(--text-main);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--theme-dark);
     }
 
     .timeline-desc {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-
-    /* Code Blocks styling */
-    pre {
-      background-color: #080c14;
-      border: 1px solid #1c2336;
-      border-radius: 12px;
-      padding: 20px;
-      overflow-x: auto;
-      margin: 16px 0;
-    }
-
-    code {
-      font-family: 'Consolas', 'Courier New', Courier, monospace;
       font-size: 0.9rem;
-      color: #e0e7ff;
+      color: var(--theme-slate-700);
     }
 
-    /* Custom Tables */
+    /* Tables */
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 24px 0;
+      margin: 20px 0;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid var(--card-border);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
     }
 
     th {
-      background-color: rgba(99, 102, 241, 0.08);
-      color: #a5b4fc;
-      font-weight: 600;
+      background-color: var(--theme-primary-soft);
+      color: var(--theme-primary-dark);
+      font-weight: 700;
       text-align: left;
-      padding: 16px;
+      padding: 14px;
       font-family: var(--font-title);
       font-size: 0.9rem;
-      border-bottom: 1px solid var(--card-border);
+      border-bottom: 2px solid rgba(16, 185, 129, 0.1);
     }
 
     td {
-      padding: 16px;
-      border-bottom: 1px solid rgba(35, 44, 69, 0.5);
-      color: #d1d5db;
-      font-size: 0.92rem;
+      padding: 14px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      color: var(--theme-slate-700);
+      font-size: 0.88rem;
+      background-color: rgba(255, 255, 255, 0.5);
     }
 
     tr:last-child td {
       border-bottom: none;
     }
 
-    tr:hover td {
-      background-color: rgba(255, 255, 255, 0.02);
-    }
-
-    /* Tabs UI */
-    .tabs {
-      display: flex;
-      border-bottom: 1px solid var(--card-border);
-      margin-bottom: 24px;
-      gap: 16px;
-    }
-
-    .tab-btn {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      font-family: var(--font-title);
-      font-size: 1.05rem;
-      font-weight: 500;
-      padding: 12px 4px;
-      cursor: pointer;
-      position: relative;
-      transition: color 0.2s;
-    }
-
-    .tab-btn:hover {
-      color: var(--text-main);
-    }
-
-    .tab-btn.active {
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-    .tab-btn.active::after {
-      content: "";
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background-color: var(--primary);
-      border-radius: 2px;
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-      animation: fadeIn 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     .tag {
       display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 600;
+      font-size: 0.72rem;
+      font-weight: 700;
       padding: 3px 8px;
-      border-radius: 4px;
+      border-radius: 6px;
       text-transform: uppercase;
-      letter-spacing: 0.03em;
     }
 
-    .tag-blue { background: rgba(99, 102, 241, 0.15); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.3); }
-    .tag-green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
-    .tag-yellow { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
-    .tag-red { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .tag-blue { background: var(--theme-secondary-soft); color: var(--theme-secondary-dark); }
+    .tag-green { background: var(--theme-primary-soft); color: var(--theme-primary-dark); }
+    .tag-yellow { background: #FEF3C7; color: #D97706; }
+    .tag-red { background: #FEE2E2; color: #EF4444; }
 
-    /* Footer */
     footer {
       text-align: center;
-      padding: 40px 24px;
-      border-top: 1px solid var(--card-border);
-      color: var(--text-muted);
-      font-size: 0.88rem;
+      padding: 30px 24px;
+      color: var(--theme-slate-500);
+      font-size: 0.85rem;
     }
 
-    /* PDF Print Optimization */
+    /* Print styling */
     @media print {
       @page {
         size: A4;
         margin: 20mm 15mm 20mm 15mm;
       }
       body {
-        background-color: #ffffff !important;
-        color: #1e293b !important;
+        background: white !important;
+        color: #0F172A !important;
         font-size: 10pt;
-        line-height: 1.5;
-      }
-      header {
-        background: none !important;
-        border-bottom: 2px solid #cbd5e1 !important;
-        padding: 30px 0 20px 0 !important;
-      }
-      .header-badge {
-        border: 1px solid #94a3b8 !important;
-        background: #f1f5f9 !important;
-        color: #475569 !important;
-      }
-      h1 {
-        background: none !important;
-        -webkit-text-fill-color: initial !important;
-        color: #0f172a !important;
-        font-size: 24pt !important;
-      }
-      header p {
-        color: #475569 !important;
-        font-size: 12pt !important;
-      }
-      .meta-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 12px !important;
-      }
-      .meta-card {
-        background: #f8fafc !important;
-        border: 1px solid #e2e8f0 !important;
-      }
-      .meta-card label {
-        color: #64748b !important;
-      }
-      .meta-card value, .meta-card value a {
-        color: #0f172a !important;
-      }
-      .container {
-        max-width: 100% !important;
-        padding: 0 !important;
-        margin-top: 30px !important;
       }
       section {
-        background: #ffffff !important;
-        border: 1px solid #e2e8f0 !important;
-        border-radius: 12px !important;
-        padding: 24px !important;
-        margin-bottom: 24px !important;
+        background: white !important;
+        border: 1px solid #E2E8F0 !important;
         box-shadow: none !important;
+        padding: 20px !important;
         page-break-inside: avoid !important;
-      }
-      h2 {
-        color: #0f172a !important;
-        font-size: 16pt !important;
-        border-bottom: 1px solid #e2e8f0 !important;
-      }
-      h2::before {
-        background: #4f46e5 !important;
-      }
-      h3 {
-        color: #1e1b4b !important;
-        font-size: 12pt !important;
-        margin-top: 16px !important;
-      }
-      p, li {
-        color: #334155 !important;
-      }
-      .timeline::before {
-        background-color: #e2e8f0 !important;
-      }
-      .timeline-item::before {
-        background-color: #ffffff !important;
-        border-color: #6366f1 !important;
-      }
-      .timeline-item.success::before {
-        border-color: #10b981 !important;
-      }
-      .timeline-item.warning::before {
-        border-color: #f59e0b !important;
-      }
-      .timeline-title {
-        color: #0f172a !important;
-      }
-      .timeline-desc {
-        color: #475569 !important;
-      }
-      /* Expand Tabs for Printing */
-      .tabs {
-        display: none !important;
-      }
-      .tab-content {
-        display: block !important;
-        opacity: 1 !important;
-        transform: none !important;
-        margin-bottom: 20px !important;
-      }
-      #agent1::before {
-        content: "■ 크리넥스_기상_보안관 프롬프트 전문" !important;
-        display: block !important;
-        font-size: 11pt !important;
-        font-weight: 700 !important;
-        color: #4f46e5 !important;
-        margin-top: 20px !important;
-        margin-bottom: 8px !important;
-      }
-      #agent2::before {
-        content: "■ 크리넥스_기획관 프롬프트 전문" !important;
-        display: block !important;
-        font-size: 11pt !important;
-        font-weight: 700 !important;
-        color: #059669 !important;
-        margin-top: 20px !important;
-        margin-bottom: 8px !important;
-      }
-      #agent3::before {
-        content: "■ 크리넥스_비상_우회관 프롬프트 전문" !important;
-        display: block !important;
-        font-size: 11pt !important;
-        font-weight: 700 !important;
-        color: #b45309 !important;
-        margin-top: 20px !important;
-        margin-bottom: 8px !important;
-      }
-      pre {
-        background-color: #f8fafc !important;
-        border: 1px solid #cbd5e1 !important;
-        border-radius: 8px !important;
-        padding: 12px !important;
-        page-break-inside: avoid !important;
-        white-space: pre-wrap !important;
-        word-wrap: break-word !important;
-      }
-      code {
-        color: #0f172a !important;
-        font-size: 8.5pt !important;
-      }
-      table {
-        border: 1px solid #cbd5e1 !important;
-        page-break-inside: avoid !important;
-      }
-      th {
-        background-color: #f1f5f9 !important;
-        color: #1e293b !important;
-        border-bottom: 2px solid #cbd5e1 !important;
-        padding: 10px !important;
       }
       td {
-        color: #334155 !important;
-        border-bottom: 1px solid #e2e8f0 !important;
-        padding: 10px !important;
-      }
-      .tag-blue { background: #eff6ff !important; color: #1d4ed8 !important; border: 1px solid #bfdbfe !important; }
-      .tag-green { background: #f0fdf4 !important; color: #15803d !important; border: 1px solid #bbf7d0 !important; }
-      .tag-yellow { background: #fefbeb !important; color: #a16207 !important; border: 1px solid #fef08a !important; }
-      .tag-red { background: #fef2f2 !important; color: #b91c1c !important; border: 1px solid #fecaca !important; }
-      footer {
-        border-top: 1px solid #e2e8f0 !important;
-        color: #64748b !important;
-        padding: 20px 0 !important;
+        background: white !important;
       }
     }
   </style>
@@ -624,158 +402,53 @@
       </div>
     </section>
 
-    <!-- Section 3: Specialized Agents Specs -->
+    <!-- Section 3: OpenAPI Specs -->
     <section>
-      <h2>에이전트별 상세 사양서 (Agent Specification)</h2>
-      <p>각 에이전트의 뇌세포에 해당하는 시스템 프롬프트 명세입니다. 오동작을 줄이기 위해 온도를 <strong>0.3(저온 설정)</strong>으로 엄격하게 제한했습니다.</p>
-      
-      <div class="tabs">
-        <button class="tab-btn active" onclick="openTab(event, 'agent1')">기상_보안관</button>
-        <button class="tab-btn" onclick="openTab(event, 'agent2')">기획관</button>
-        <button class="tab-btn" onclick="openTab(event, 'agent3')">비상_우회관</button>
-      </div>
-
-      <div id="agent1" class="tab-content active">
-        <pre><code># 역할 (Persona)
-너는 기상청 실시간 API를 활용해 보행 약자의 야외 이동 안전도를 평가하는 '크리넥스_기상_보안관'이다.
-
-# 동작 가이드라인 (Rules & Constraints)
-1. 사용자가 질문하면 기상청_자외선지수_조회 도구를 가동해 실시간 자외선 지수(UV Index) 데이터를 확보하라.
-2. 지식베이스의 임계치(WE_001~WE_006)를 대조하여 안전 등급을 판정하라.
-   - 자외선 0 ~ 5 (NORMAL)
-   - 자외선 6 ~ 7 (CAUTION)
-   - 자외선 8 이상 (EMERGENCY)
-   - 초미세먼지 75 ㎍/㎥ 이상 (EMERGENCY)
-   - 체감온도 32°C 이상 (EMERGENCY)
-3. 판정된 코드와 날씨 브리핑만 [출력 형식]에 맞게 출력하라.</code></pre>
-      </div>
-
-      <div id="agent2" class="tab-content">
-        <pre><code># 역할 (Persona)
-너는 보행 약자들을 위해 100% 안전하고 쾌적한 무장벽 여행 동선 초안을 기획하는 '크리넥스_기획관'이다.
-
-# 동작 가이드라인 (Rules & Constraints)
-1. 연동된 크리넥스_무장애_지식베이스의 보행약자 세그먼트별 물리 장벽(ID: BF_001~BF_008)을 최우선 기준으로 삼아 정합성을 평가하라.
-2. 관광공사 MCP 도구를 5회 이하로 제한하여 호출(detailWithTour2 등은 유력 후보 3~4곳만 실행)함으로써 LangGraph 재귀 제한 25회를 초과하지 않게 조율하라.
-3. 획득한 관광지의 단차, 엘리베이터 여부를 대조해 안전한 무장벽 코스 1차 초안을 작성하라.</code></pre>
-      </div>
-
-      <div id="agent3" class="tab-content">
-        <pre><code># 역할 (Persona)
-너는 기상 보안관의 위험 판정을 파악해, 기획관이 짠 일정을 100% 안전한 냉방 실내 전시 코스로 조율하는 전술 전문가 '크리넥스_비상_우회관'이다.
-
-# 동작 가이드라인 (Rules & Constraints)
-1. 기상 등급 판정이 "CAUTION" 또는 "EMERGENCY"인 경우에만 이 우회 프로토콜을 가동한다. (NORMAL은 무수정 통과)
-2. 기획관이 짠 일정 중 야외 노출 동선을 선별하여 100% 무단차 및 냉방이 완비된 'MMCA 국립현대미술관', '대한민국역사박물관', '서울공예박물관' 등의 명품 실내 코스로 자동 대체(Swap)하라.
-3. 사용자에게 최종 출력 시, 우회된 사유와 변경된 최종 뽀송 일정을 친절히 렌더링하라.</code></pre>
-      </div>
-    </section>
-
-    <!-- Section 4: Structured RAG DB -->
-    <section>
-      <h2>크리넥스 무장애 RAG 지식베이스 규격</h2>
-      <p>안전 임계치 검증의 신뢰성을 담보하기 위해 구축하여 연동시킨 <code>knto_barrier_free_kb.csv</code>의 명세 정보입니다. <strong>총 14개 클래스</strong>에 달하는 촘촘한 배리어프리 대응 데이터셋을 탑재하고 있습니다.</p>
+      <h2>실시간 공공 OpenAPI 연동 규격</h2>
+      <p>크리넥스는 이종(異種) 실시간 공공 데이터를 단일 프롬프트 상에서 연쇄적으로 바인딩 및 파싱하여 실재하는 최신 인프라 정보에 근거한 추론을 수행합니다.</p>
       
       <table>
         <thead>
           <tr>
-            <th>ID (식별자)</th>
-            <th>카테고리</th>
-            <th>대상 보행약자</th>
-            <th>물리 장벽 / 기상 임계치 조건</th>
-            <th>상세 기준 및 우회 요령</th>
+            <th>API 분류</th>
+            <th>호출 파라미터 및 규격</th>
+            <th>추론 융합 및 매핑 로직</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><span class="tag tag-blue">BF_001</span></td>
-            <td>수동휠체어_단독</td>
-            <td>수동 휠체어 이용자 (보조인 없음)</td>
-            <td>문턱 1.5cm 이하, 보행로 경사도 4.7도 이하</td>
-            <td>아스팔트, 우레탄 선호. 경복궁 박석/자갈길 기피. 주출입구 무단차 및 배리어프리 화장실 필수 동선 배치.</td>
+            <td><strong>기상청 생활기상지수 V4</strong></td>
+            <td>좌표(`nx, ny`), 발표시간(`time`) 자외선/체감온도 호출</td>
+            <td>실시간 기상 임계치(UV 지수 8 이상 또는 체감온도 32°C 이상)를 감지하여 <code>EMERGENCY</code> 비상 대피 코드 연동.</td>
           </tr>
           <tr>
-            <td><span class="tag tag-blue">BF_003</span></td>
-            <td>전동휠체어</td>
-            <td>전동 휠체어 및 전동 스쿠터 이용자</td>
-            <td>문턱 2.0cm 이하, 보행로 경사도 8.1도 이하</td>
-            <td>진흙길, 모래사장 진입 차단. 배터리 소진에 대비한 전동 휠체어 급속 충전기 위치(예: 안녕인사동) 매핑 필수.</td>
+            <td><strong>관광공사 무장애 API</strong></td>
+            <td>관광지별 `contentID` 기반 편의시설 상세 정보 조회</td>
+            <td>휠체어 램프 유무, 엘리베이터 유무, 주출입구 단차 높이(1.5cm 미만 등) 데이터를 파싱하여 이동 정합성 1차 필터링.</td>
           </tr>
           <tr>
-            <td><span class="tag tag-blue">BF_006</span></td>
-            <td>시각장애인</td>
-            <td>시각장애인 및 저시력 관광객</td>
-            <td>점자 블록 및 음성 유도기 안내 필수</td>
-            <td>계단 진입 전 점자 블록 확인. 오디오 가이드 대여소 및 해설사 투어 가능 구역(경복궁, 창덕궁 등) 최우선 배정.</td>
-          </tr>
-          <tr>
-            <td><span class="tag tag-blue">BF_008</span></td>
-            <td>임산부_배려</td>
-            <td>임산부 및 태아 안전 관리 필요군</td>
-            <td>연속 보행 30분 미만, 리프트 필수</td>
-            <td>급작스러운 오르막길 회피 및 엘리베이터 동선 위주 매핑. 수유실 및 기저귀 교환대 등 모성 보호 휴게 공간 연계.</td>
-          </tr>
-          <tr>
-            <td><span class="tag tag-yellow">WE_002</span></td>
-            <td>자외선_위험</td>
-            <td>보행 약자 및 고령층 전체</td>
-            <td>실시간 자외선 지수 8 이상</td>
-            <td>낮 시간대 야외 활동 전면 금지. 청계천 도보길과 경복궁 마당 관람을 삭제하고 MMCA 서울 등 100% 실내 관람 대체.</td>
-          </tr>
-          <tr>
-            <td><span class="tag tag-red">WE_003</span></td>
-            <td>체감온도_폭염</td>
-            <td>고령층 실버 세대 및 열사병 고위험군</td>
-            <td>체감온도 32도 이상</td>
-            <td>야외 연속 보행 15분 미만 통제. 동선 중간에 냉방 대형 복합몰(디타워, 그랑서울 등) 휴식 최소 1시간 강제 배치.</td>
-          </tr>
-          <tr>
-            <td><span class="tag tag-red">WE_004</span></td>
-            <td>미세먼지_위험</td>
-            <td>호흡기 질환자 및 보행 노약자</td>
-            <td>초미세먼지(PM2.5) 75 ㎍/㎥ 이상</td>
-            <td>야외 전통 명소 일정을 전면 취소하고, 고성능 공기 정화 환기 설비를 완비한 대형 실내 미술관·박물관 코스로 자동 치환.</td>
+            <td><strong>관광공사 국문 관광정보 API</strong></td>
+            <td>지역 코드 기반 명소 좌표 및 기본 정보 조회</td>
+            <td>지역 내 동선 설계 및 RAG 상의 고유 식별 명소 정보를 1:1 대조하여 텍스트 유사도 매칭 환각(Hallucination) 방지.</td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <!-- Section 5: Engineering Triumphs -->
+    <!-- Section 4: Engineering Triumphs -->
     <section>
       <h2>핵심 기술적 시행착오 & 극복기 (Trials & Triumphs)</h2>
       
-      <h3>🚀 LangGraph 재귀 제한 25회 돌파 (Recursion Limit)</h3>
+      <h3>🚀 LangGraph 재귀 제한 25회 돌파 (Recursion Limit 해결)</h3>
       <p><strong>현상</strong>: 무장애 검증 프롬프트가 가동되었을 때, AI가 API 목록 중 수십 개의 관광지를 발견하여 모든 후보지에 대해 <code>detailWithTour2</code> API 조회를 재귀 루프로 돌려 랭그래프 엔진의 한계선인 25단계(Recursion limit of 25)를 넘어서 작동을 강제 중단시키는 에러가 빈번했습니다.</p>
-      <p><strong>해결</strong>: 캔버스를 건드리지 않고 에이전트의 프롬프트 내에 <strong>'API 5회 이하 예산 Throttling 규칙'</strong>을 이식하여, AI가 첫 관광지 목록에서 무장애 시설이 잘 갖춰져 있을 것으로 추정되는 핵심 3~4곳만 지능적으로 골라내고 이들만 상세 검증하게 만듦으로써 속도 500% 개선과 더불어 완벽한 안정성을 실현했습니다.</p>
-
-      <h3>🔌 API 커넥터 화이트스페이스 미세 튜닝</h3>
-      <p><strong>현상</strong>: 기상청 생활기상지수 API를 등록할 때 복사-붙여넣기 문자열 마지막에 들어간 보이지 않는 미세 개행문자(\n)나 공백 때문에 엔노이아의 정적 URL 밸리데이터가 "올바른 URL 형식이 아닙니다"를 출력하며 등록을 거부했습니다.</p>
-      <p><strong>해결</strong>: URL 입력창의 문자열 우측 끝 문자 <code>}</code>에 커서를 완벽하게 밀착하는 백스페이스 백트래킹 방식을 적용해 공백을 완전히 박멸하여 커넥터 저장 및 실시간 통신에 최종 성공했습니다.</p>
+      <p><strong>해결</strong>: 캔버스를 건드리지 않고 에이전트의 프롬프트 내에 <strong>'API 5회 이하 예산 Throttling 규칙'</strong>을 이식하여, AI가 첫 관광지 목록에서 무장애 시설이 잘 갖춰져 있을 것으로 추정되는 핵심 3~4곳만 지능적으로 골라내고 이들만 상세 검증하게 만듦으로써 속도 500% 개선과 더불어 완벽한 작동 안정성을 실현했습니다.</p>
     </section>
 
   </div>
 
   <footer>
-    <p>© 2026 2026 관광데이터 활용 공모전 - 크리넥스 (Kleenex) 단독 팀. All Rights Reserved.</p>
+    <p>© 2026 관광데이터 활용 공모전 - 크리넥스 (Kleenex) 단독 팀. All Rights Reserved.</p>
   </footer>
 
-  <!-- Tabs Switcher JS -->
-  <script>
-    function openTab(evt, tabName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tab-content");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-        tabcontent[i].classList.remove("active");
-      }
-      tablinks = document.getElementsByClassName("tab-btn");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].classList.remove("active");
-      }
-      document.getElementById(tabName).style.display = "block";
-      document.getElementById(tabName).classList.add("active");
-      evt.currentTarget.classList.add("active");
-    }
-  </script>
 </body>
 </html>
